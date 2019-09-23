@@ -17,3 +17,5 @@ nb-configuration.xml
 
 # Python
 __pycache__/
+/Temperature/nbproject/private/
+/TimeConvert/nbproject/private/
