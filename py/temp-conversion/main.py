@@ -1,5 +1,6 @@
 # Input celcius.
-celcius = float(input('Suhu celcius: '))
+input_str = input('Suhu celcius: ')
+celcius = float(input_str)
 
 # Konversi ke kelvin.
 kelvin = celcius + 273
