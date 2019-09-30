@@ -3,7 +3,7 @@ def seri(r1, r2, r3):
 
 
 def paralel(r1, r2, r3):
-  return 1 / r1 + 1 / r2 + 1 / r3
+  return 1 / (1 / r1 + 1 / r2 + 1 / r3)
 
 
 # Input.
