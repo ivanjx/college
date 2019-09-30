@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package method;
+import java.util.Scanner;
 
 /**
  *
@@ -63,7 +64,26 @@ public class Method {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // Initializing scanner.
+        Scanner scanner = new Scanner(System.in);
         
+        // Getting input.
+        System.out.print("R1: ");
+        double r1 = scanner.nextDouble();
+        
+        System.out.print("R2: ");
+        double r2 = scanner.nextDouble();
+        
+        System.out.print("R3: ");
+        double r3 = scanner.nextDouble();
+        
+        // Calculating.
+        double serial = resistanceSerial(r1, r2, r3);
+        double paralel = resistanceParalel(r1, r2, r3);
+        
+        // Printing.
+        System.out.println("Serial: " + serial);
+        System.out.println("Paralel: " + paralel);
     }
     
 }
