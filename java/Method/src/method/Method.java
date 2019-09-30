@@ -51,11 +51,19 @@ public class Method {
         return gcd(b, a % b);
     }
     
+    static double resistanceSerial(double r1, double r2, double r3) {
+        return r1 + r2 + r3;
+    }
+    
+    static double resistanceParalel(double r1, double r2, double r3) {
+        return 1 / (1 / r1 + 1 / r2 + 1 / r3);
+    }
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println(power(2, 2));
+        
     }
     
 }
