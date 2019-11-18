@@ -65,6 +65,14 @@ public class Task02_smt1 {
     }
     
     public static void main(String[] args) {
+        insertLast(10);
+        insertFirst(5);
+        insertFirst(6);
+        insertFirst(0);
+        print();
+        System.out.println();
         
+        deleteLast();
+        print();
     }
 }
