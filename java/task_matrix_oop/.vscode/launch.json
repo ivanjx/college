@@ -14,7 +14,7 @@
             "type": "java",
             "name": "Debug (Launch)-App<task_matrix_oop>",
             "request": "launch",
-            "mainClass": "src.app.App",
+            "mainClass": "app.App",
             "projectName": "task_matrix_oop"
         }
     ]
