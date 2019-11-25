@@ -1,11 +1,18 @@
-# NetBeans specific #
-private/
-build/
-nbbuild/
-dist/
-nbdist/
-nbactions.xml
-nb-configuration.xml
+# Java #
+**/.idea/
+**/.gradle
+**/node_modules/
+.DS_Store
+target/
+.classpath
+.project
+.settings
+**/.checkstyle
+target/
+bin/
+**/lib/
+out/
+server/
 
 # Class Files #
 *.class
