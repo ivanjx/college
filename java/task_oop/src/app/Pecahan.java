@@ -74,19 +74,17 @@ public class Pecahan {
         Pecahan resultP = this;
         int bulat = 1;
 
-        if (resultP.getPembilang() > resultP.getPenyebut()) { // Pembilang > penyebut ?
+        if (resultP.getPembilang() >= resultP.getPenyebut()) { // Pembilang >= penyebut ?
             bulat = resultP.getPembilang() / resultP.getPenyebut(); // Hitung bilangan bulat.
             int resultPembilang = resultP.getPembilang() % resultP.getPenyebut(); // Hitung pembilang baru: sisa bagi pembilang dgn penyebut.
             resultP = new Pecahan(resultPembilang, resultP.getPenyebut()); // Penyebut tetap sama.
             resultP = resultP.simplify(); // Sederhanakan pecahan baru.
-        } // else tidak ada bilangan bulat.
+        } // else tidak ada bilangan bulat karena pembilang < penyebut.
 
         String result;
 
         if (resultP.getPembilang() == 0) {
             result = "" + bulat; // Print bilangan bulat.
-        } else if (resultP.getPembilang() == resultP.getPenyebut()) {
-            result = "" + 1; // Print 1.
         } else {
             result = resultP.getPembilang() + "/" + resultP.getPenyebut(); // Print pecahan saja.
 
