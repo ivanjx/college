@@ -83,14 +83,14 @@ public class Pecahan {
 
         String result;
 
-        if (resultP.getPembilang() == 0) {
+        if (resultP.getPembilang() == 0) { // Tidak ada pecahan?
             result = "" + bulat; // Print bilangan bulat.
-        } else {
-            result = resultP.getPembilang() + "/" + resultP.getPenyebut(); // Print pecahan saja.
+        } else { // Ada pecahan.
+            result = resultP.getPembilang() + "/" + resultP.getPenyebut(); // Print pecahan dulu.
 
             if (bulat > 1) { // Ada bilangan bulat?
                 result = bulat + " " + result; // Print bilangan bulat + pecahan.
-            }
+            } // else print pecahan saja.
         }
 
         return result; // Done.
