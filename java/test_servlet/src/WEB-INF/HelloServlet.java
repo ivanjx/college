@@ -4,7 +4,7 @@ import javax.servlet.http.*;
 
 public class HelloServlet extends HttpServlet
 {
-	// GET /
+	// GET /api/test
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	throws 
 	ServletException,
