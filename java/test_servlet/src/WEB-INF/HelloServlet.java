@@ -10,13 +10,11 @@ public class HelloServlet extends HttpServlet
 	ServletException,
 	IOException {
 		// Content type.
-		response.setContentType("text/html");
+		response.setContentType("application/json");
 
 		// Body.
 		PrintWriter out = response.getWriter();
-		out.println("<html><body>");
-		out.println("<h1>Test Servlet</h1>");
-		out.println("</body></html>");
+		out.println("{\"message\": \"Hello world!\"}");
 
 		// Done.
 		out.close();
