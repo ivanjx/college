@@ -4,7 +4,7 @@
     </head>
     <body>
         <%
-            String hello = "This is a JSP page!";
+            String hello = "This is an index JSP page!";
         %>
         <h1><%=hello%></h1>
     </body>
