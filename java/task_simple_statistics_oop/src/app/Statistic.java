@@ -23,7 +23,7 @@ public class Statistic {
             narr[i] = arr[i];
         }
 
-        narr[i + 1] = num;
+        narr[i] = num;
         return narr;
     }
 
@@ -35,7 +35,7 @@ public class Statistic {
         for (int i = 0; i < m_arr.length; ++i) {
             int lowIndex = i;
 
-            for (int j = i + 1; j < m_arr.length; ++i) {
+            for (int j = i + 1; j < m_arr.length; ++j) {
                 if (m_arr[j] < m_arr[lowIndex]) {
                     lowIndex = j;
                 }

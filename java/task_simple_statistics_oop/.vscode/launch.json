@@ -5,6 +5,13 @@
             "name": "CodeLens (Launch) - App",
             "request": "launch",
             "mainClass": "app.App",
+            "projectName": "task_simple_statistics_oop_1c477ddc"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "mainClass": "app.App",
             "projectName": "task_simple_statistics_oop_791ac1"
         }
     ]
