@@ -8,6 +8,12 @@ public class App {
         s.addNumber(3);
         s.addNumber(4);
         s.addNumber(5);
-        System.out.println(s.getMedian());
+        s.addNumber(5);
+        
+        int[] modes = s.getMode();
+
+        for(int i = 0; i < modes.length; ++i) {
+            System.out.println(modes[i]);
+        }
     }
 }

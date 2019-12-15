@@ -49,6 +49,14 @@ public class Statistic {
         }
     }
 
+    public void reverse() {
+        int[] narr = new int[m_arr.length];
+
+        for(int i = m_arr.length - 1; i >= 0; --i) {
+            narr[i] = m_arr[i];
+        }
+    }
+
     public int getMinimum() {
         int result = m_arr[0];
 
@@ -92,30 +100,8 @@ public class Statistic {
     }
 
     public int[] getMode() {
-        int[] result = new int[0];
-        int maxCount = 0;
-
-        for (int i = 0; i < m_arr.length; i++) {
-            int count = 1;
-
-            for (int j = i + 1; j < m_arr.length; j++) {
-                if (m_arr[j] == m_arr[i]){
-                    count++;
-                }
-            }
-
-            if (count >= maxCount) {
-                if (count > maxCount) {
-                    // Reset.
-                    result = new int[0];
-                    maxCount = count;
-                }
-
-                result = addNumber(result, m_arr[i]);
-            }
-        }
-
-        return result;
+        ModeHelper mh = new ModeHelper(m_arr);
+        return mh.getHighest();
     }
 
     public float getMedian() {
@@ -146,6 +132,16 @@ public class Statistic {
     public void print() {
         for (int i = 0; i < m_arr.length; ++i) {
             System.out.println(m_arr[i]);
+        }
+    }
+
+    public void printRanks() {
+        // Getting modes.
+        ModeHelper mh = new ModeHelper(m_arr);
+
+        // Printing.
+        for(int i = 0; i < mh.m_c.length; ++i) {
+            //System.out.println("");
         }
     }
 }
