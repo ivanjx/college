@@ -51,6 +51,8 @@ public class MainForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kalkulator");
+        setLocationByPlatform(true);
+        setType(java.awt.Window.Type.UTILITY);
 
         txtResult.setEditable(false);
         txtResult.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
