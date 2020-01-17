@@ -80,3 +80,4 @@ nb-configuration.xml
 ## Python
 ##############################
 __pycache__/
+/java/gui-calculator/nbproject/private/

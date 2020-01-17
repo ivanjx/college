@@ -1,30 +1,32 @@
-# Struktur WHILE.
-total = 0
-jumlah = 0
+# Deklarasi matriks
+matriks = []
 
-while True:
-  # Baca nilai angka.
-  angka = int(input('Angka: '))
+# masukkan nilai
+# cara 1
+#matriks.append([1, 2, 3])
+#matriks.append([4, 5, 6])
+#matriks.append([7, 8, 9])
 
-  # Cek.
-  if angka == 0:
-    # Kita mendapat nilai 0 disini.
-    # Keluar dari blok loop.
-    break
+# cara 2
+matriks.append([])
+matriks[0].append(1)
+matriks[0].append(2)
+matriks[0].append(3)
 
-  else:
-    # Jika selain dari 0.
-    # Naikkan nilai jumlah.
-    jumlah += 1
+matriks.append([])
+matriks[1].append(4)
+matriks[1].append(5)
+matriks[1].append(6)
 
-    # Tambah nilai total.
-    total += angka
+matriks.append([])
+matriks[2].append(7)
+matriks[2].append(8)
+matriks[2].append(9)
 
-# Ini sudah bukan berada di dalam blok while.
-print('Sudah ada diluar blok while')
-rata2 = total / jumlah
-print('Rata-rata: ', rata2)
+# print.
+for hval in matriks:
+  for vval in hval:
+    print(vval, end=" ")
 
-
-# APA ITU BREAK?
-# Break digunakan ketika kita ingin keluar secara paksa dari suatu blok LOOP, (for maupun while)
+  # baris baru.
+  print()
