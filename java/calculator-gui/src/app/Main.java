@@ -199,10 +199,15 @@ public class Main {
 
     // Static.
     public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ex) {}
+
         JFrame frame = new JFrame("Kalkulator");
         frame.setContentPane(new Main().pnlMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }
