@@ -134,6 +134,7 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 clearResult();
+                reset();
             }
         });
     }
