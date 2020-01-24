@@ -25,6 +25,7 @@ public class Main {
     private JButton btn2;
     private JButton btn3;
     private JButton btn0;
+    private JButton btnPositiveNegative;
 
     private boolean _isError;
     private boolean _isVal1Set;
@@ -55,6 +56,7 @@ public class Main {
         setBtnCalculate();
         setBtnClear();
         setBtnReset();
+        setBtnPositiveNegative();
     }
 
     void setNumberButton(JButton btn) {
@@ -149,6 +151,23 @@ public class Main {
                     // Act as reset.
                     reset();
                 }
+            }
+        });
+    }
+
+    void setBtnPositiveNegative() {
+        btnPositiveNegative.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String available = txtResult.getText();
+
+                if (available.equals("0")) {
+                    return;
+                }
+
+                double val = Double.parseDouble(available);
+                val = val * -1;
+                txtResult.setText(Double.toString(val));
             }
         });
     }
