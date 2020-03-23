@@ -3,6 +3,10 @@
 int main() 
 {
     const std::string test = "Institut Sains Teknologi Nasional";
+    std::cout 
+        << "String: " << test
+        << std::endl;
+
     const std::string inames[] = 
     {
         "pertama",
@@ -19,8 +23,9 @@ int main()
         if (test[i] == ' ')
         {
             ++iname;
-            std::cout << std::endl;
-            std::cout << "Iterasi " << inames[iname] << ": ";
+            std::cout 
+                << std::endl
+                << "Iterasi " << inames[iname] << ": ";
             continue;
         }
 
