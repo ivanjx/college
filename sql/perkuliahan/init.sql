@@ -3,7 +3,7 @@ create database perkuliahan;
 use perkuliahan;
 
 create table dosen(
-	id varchar(20) not null,
+    id varchar(20) not null,
     nama varchar(100) not null,
     tgl_lahir date not null,
     no_telp varchar(20) not null,
@@ -12,7 +12,7 @@ create table dosen(
 );
 
 create table mahasiswa(
-	id varchar(20) not null,
+    id varchar(20) not null,
     nama varchar(100) not null,
     tgl_lahir date not null,
     angkatan int not null,
@@ -28,7 +28,7 @@ create table ruangan(
 );
 
 create table kelas(
-	id int not null AUTO_INCREMENT,
+    id int not null AUTO_INCREMENT,
     nama varchar(50) not null UNIQUE,
     dosen_id varchar(20) not null,
     ruangan_id int not null,
