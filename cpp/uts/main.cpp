@@ -167,7 +167,7 @@ int main()
 
         printMenu();
 
-        std::cout << "Pilihan anda: ";
+        
         char pilihan;
         std::cin >> pilihan;
 
