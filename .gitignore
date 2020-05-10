@@ -1,6 +1,6 @@
 .vs/
 [Dd]ebug/
-*.vcxproj*
+*.vcxproj.*
 
 ##############################
 ## Java
