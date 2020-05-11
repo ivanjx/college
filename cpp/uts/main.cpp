@@ -1,4 +1,3 @@
-#include "uts.h"
 #include <iostream>
 #include <stdlib.h>
 
@@ -158,7 +157,7 @@ void printMenu()
         << "4. Exit" << std::endl;
 }
 
-int run()
+int main()
 {
     LIST* list = LIST_init();
 
