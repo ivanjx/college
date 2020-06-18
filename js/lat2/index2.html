@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Memasukkan Bilangan</title>
+    </head>
+    <body>
+        <p>
+            <script>
+                let bil1 = 0;
+                let bil2 = 0;
+
+                function read() {
+                    bil1 = parseFloat(document.myform.bilangan1.value);
+                    bil1 = isNaN(bil1) ? 0 : bil1;
+                    bil2 = parseFloat(document.myform.bilangan2.value);
+                    bil2 = isNaN(bil2) ? 0 : bil2;
+                }
+                
+                function jumlah() {
+                    read();
+                    let hasil = bil1 + bil2;
+                    alert("Hasil penjumlahan: " + hasil);
+                }
+
+                function kurang() {
+                    read();
+                    let hasil = bil1 - bil2;
+                    alert("Hasil pengurangan: " + hasil);
+                }
+
+                function kali() {
+                    read();
+                    let hasil = bil1 * bil2;
+                    alert("Hasil perkalian: " + hasil);
+                }
+
+                function bagi() {
+                    read();
+                    let hasil = bil1 / bil2;
+                    alert("Hasil pembagian: " + hasil);
+                }
+            </script>
+            <form name="myform">
+                <p>
+                Bilangan Pertama :<input type="text" size="11" name="bilangan1"><br/>
+                Bilangan Kedua :<input type="text" size="11" name="bilangan2">
+                </p>
+                <INPUT TYPE="button" value="Jumlahkan" onclick="jumlah()">
+                <INPUT TYPE="button" value="Kurangkan" onclick="kurang()">
+                <INPUT TYPE="button" value="Kalikan" onclick="kali()">
+                <INPUT TYPE="button" value="Bagikan" onclick="bagi()">
+                <INPUT TYPE="reset" value="Ulang">
+            </form>
+        </p>
+    </body>
+</html>

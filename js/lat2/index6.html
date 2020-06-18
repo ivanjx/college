@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>
+            Latihan Dengan Objek TextArea
+        </title>
+    </head>
+    <body>
+        <script>
+            function tekan() {
+                let ket = document.fform.ket.value;
+                let ketp = document.fform.ketp.value;
+
+                document.fform.oket.value = ket;
+                document.fform.oketp.value = ketp;
+            }
+        </script>
+        <form name ="fform"> 
+            <H1> Memasukkan Data Dengan Objek TextArea</H1><hr> 
+            <h3>Keterangan :<h3><br> 
+            <textarea name="ket" rows="3" cols="30"></textarea> 
+            <h3>Keterangan tambahan :<h3><br> 
+            <textarea name="ketp" rows="3" cols="30"></textarea> 
+            <BR><BR> 
+            <input type="button" value="kirim" onclick="tekan()"> 
+            <input type="reset" value="ulang"> 
+            <H3>Output Keterangan :</H3> 
+            <textarea name="oket" rows="3" cols="30"></textarea> 
+            <H3>Output Keterangan tambahan :</H3> 
+            <textarea name="oketp" rows="3" cols="30"></textarea> 
+        </form> 
+            
+    </body>
+</html>

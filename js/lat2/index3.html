@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+            Latihan Dengan Object Text
+        </title>
+    </head>
+    <body>
+        <script>
+            function tekan() {
+                let nama = document.myform.nama.value;
+                let alamat = document.myform.alamat.value;
+                let umur = document.myform.umur.value;
+                let pekerjaan = document.myform.pekerjaan.value;
+
+                document.myform.onama.value = nama;
+                document.myform.oalamat.value = alamat;
+                document.myform.oumur.value = umur;
+                document.myform.opekerjaan.value = pekerjaan;
+            }
+        </script>
+        <form name ="myform"> 
+            <H1> Memasukkan Data Dengan Objek Teks</H1><hr> 
+            <pre>Nama       : <input type="text" size="11" name="nama"></pre>
+            <pre>Umur       : <input type="text" size="11" name="umur"></pre>
+            <pre>Pekerjaan  : <input type="text" size="11" name="pekerjaan"></pre>
+            <pre>Alamat     : <input type="text" size="25" name="alamat"></pre>
+            <input type="button" value="kirim" onclick="tekan()"> 
+            <input type="reset" value="ulang"> 
+            <H3>Output</H3> 
+            <pre>Jadi Nama Anda adalah <input type="text" size="11" name="onama"></pre>
+            <pre>Alamat Anda di <input type="text" size="25" name="oalamat"></pre>
+            <pre>Umur anda sekarang <input type="text" size="25" name="oumur"></pre>
+            <pre>Sekarang anda bekerja sebagai <input type="text" size="25" name="opekerjaan"></pre>
+        </form> 
+        
+    </body>
+</html>

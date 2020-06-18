@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>
+            Latihan Dengan Objek Checkbox
+        </title>
+    </head>
+    <body>
+        <script>
+            function chk() {
+                let result = "Hobby anda ";
+                let count = result.length;
+
+                if (document.myform.bola.checked) {
+                    result += "nonton bola, ";
+                }
+
+                if (document.myform.tv.checked) {
+                    result += "nonton tv, ";
+                }
+
+                if (document.myform.netflix.checked) {
+                    result += "binge netflix, ";
+                }
+
+                if (result.length == count) {
+                    result = "Anda tidak punya hobi...";
+                } else {
+                    result = result.substring(0, result.length - 2);
+                }
+
+                alert(result);
+            }
+        </script>
+        <form name="myform"> 
+            <H1> Memasukkan Data Dengan Objek Checkbox</H1><hr> 
+            <p>
+            Hobby anda : 
+            <input type="checkbox" name="bola">Nonton Sepak Bola 
+            <input type="checkbox" name="tv">Nonton televisi
+            <input type="checkbox" name="netflix"> Binge netflix
+            </p> 
+            <hr> 
+            <p><input type="button" value="CONFIRM" onclick="chk()"> 
+            <input type="reset" value="RESET"></p> 
+        </form> 
+            
+    </body>
+</html>
