@@ -48,19 +48,19 @@ begin
 
   if op = '+' then
   begin
-      res := add(num1, num2);
+    res := add(num1, num2);
   end
   else if op = '-' then
   begin
-      res := sub(num1, num2);
+    res := sub(num1, num2);
   end
   else if op = '*' then
   begin
-      res := mul(num1, num2);
+    res := mul(num1, num2);
   end
   else
   begin
-      res := divide(num1, num2);
+    res := divide(num1, num2);
   end;
 
   Write('Result: ');
