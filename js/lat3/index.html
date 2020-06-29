@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>
+            Travel Bintang Abadi
+        </title>
+        <style>
+            table, th, td {
+                border: 1px solid gray;
+            }
+
+            .title {
+                font-size: x-large;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            const harga = {
+                "jkt": {
+                    "eks": 70000,
+                    "bis": 40000,
+                    "eko": 10000
+                },
+                "solo": {
+                    "eks": 80000,
+                    "bis": 50000,
+                    "eko": 20000
+                },
+                "sby": {
+                    "eks": 90000,
+                    "bis": 60000,
+                    "eko": 30000
+                }
+            }
+
+            function hitung() {
+                let nama = document.myform.nama.value;
+                let tujuan = document.myform.tujuan.value;
+                let kelas = document.myform.kelas.value;
+                let qty = document.myform.qty.value;
+                let isMember = document.myform.member.checked;
+
+                let hargaTiket = harga[tujuan][kelas];
+                let subTotal = hargaTiket * qty;
+                let diskon = isMember ? (subTotal * 10 / 100) : 0;
+                let total = subTotal - diskon;
+
+                document.myform.hargaTiket.value = hargaTiket;
+                document.myform.subtotal.value = subTotal;
+                document.myform.diskon.value = diskon;
+                document.myform.total.value = total;
+            }
+        </script>
+
+        <form name="myform">
+            <table>
+                <tr>
+                    <td colspan="2" align="center">
+                        <p class="title">Travel Bintang Abadi</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <pre>Nama           : <input type="text" name="nama"></pre>
+                        <pre>Tujuan         : <select name="tujuan">
+                            <option value="jkt">Jakarta</option>
+                            <option value="solo">Solo</option>
+                            <option value="sby">Surabaya</option>
+                        </select></pre>
+                        <pre>Kelas          : <select name="kelas">
+                            <option value="eks">Eksekutif</option>
+                            <option value="bis">Bisnis</option>
+                            <option value="eko">Ekonomi</option>
+                        </select></pre>
+                        <pre>Jumlah Tiket   : <input type="number" name="qty"></pre>
+                        <pre>Member         : <input type="checkbox" name="member"></pre>
+                    </td>
+                    <td>
+                        <pre>Harga Tiket    : <input type="text" name="hargaTiket" readonly></pre>
+                        <pre>Sub Total      : <input type="text" name="subtotal" readonly></pre>
+                        <pre>Diskon         : <input type="text" name="diskon" readonly></pre>
+                        <pre>Total Bayar    : <input type="text" name="total" readonly></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="button" value="Hitung" onclick="hitung()">
+                        <input type="reset" value="Ulang">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
