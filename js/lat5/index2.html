@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Perhitungan Bunga</title>
+    </head>
+    <body>
+        <script>
+            function hitung() {
+                let saldo = parseInt(document.iform.saldo.value);
+                let bunga = parseFloat(document.iform.bunga.value);
+                let bulan = parseInt(document.iform.waktu.value);
+                let result = saldo;
+                let txt = document.iform.hasil;
+                txt.value = "";
+
+                for (let i = 0; i < bulan; ++i)
+                {
+                    result += Math.round(result * bunga / 100);
+                    txt.value += "Saldu Bulan " + (i + 1) + " = Rp. " + result;
+                    txt.value += "\r\n";
+                }
+            }
+        </script>
+        
+        <br/>
+        <br/>
+        <p align="center"><b>PERHITUNGAN BUNGA</b></p>
+        <br/>
+
+        <form name="iform">
+            <pre>Data Input         :</pre>
+            <pre>Saldo              <input type="text" name="saldo"></pre>
+            <pre>Bunga              <input type="text" name="bunga">%</pre>
+            <pre>Waktu              <input type="text" name="waktu"> Bulan</pre>
+
+            <br/>
+            <div align="center">
+                <input type="button" onclick="hitung()" value="Submit"></button>
+                <input type="reset" value="Reset"></button>
+            </div>
+            <br/>
+
+            <pre>Hasil Perhitungan  : </pre>
+            <textarea name="hasil" rows=10 cols="80" readonly></textarea>
+        </form>
+    </body>
+</html>

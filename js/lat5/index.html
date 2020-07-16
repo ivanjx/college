@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>
+            Perhitungan Faktorial dan Deret
+        </title>
+        <style>
+            table, th, td {
+                border: 1px solid gray;
+            }
+
+            .title {
+                font-size: x-large;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function faktorial(n) {
+                let result = 1;
+
+                for (let i = 1; i <= n; ++i)
+                {
+                    result *= i;
+                }
+
+                return result;
+            }
+
+            function jmlderet(n) {
+                let result = 0;
+
+                for (let i = 1; i <= n; ++i)
+                {
+                    result += i;
+                }
+
+                return result;
+            }
+
+            function hitung() {
+                let n = parseInt(document.myform.n.value);
+                document.myform.faktorial.value = faktorial(n);
+                document.myform.jumlah.value = jmlderet(n);
+            }
+        </script>
+
+        <form name="myform">
+            <table>
+                <tr>
+                    <td colspan="2" align="center">
+                        <p class="title">PERHITUNGAN FAKTORIAL dan DERET</p>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        N
+                    </td>
+                    <td>
+                        <input type="text" name="n">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        Hasil
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        Faktorial
+                    </td>
+                    <td>
+                        <input type="text" name="faktorial" readonly>
+                    </td>
+                    <td>
+                        <input type="button" value="Hitung" onclick="hitung()">
+                        <input type="reset" value="Ulang">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Jumlah
+                    </td>
+                    <td>
+                        <input type="text" name="jumlah" readonly>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
