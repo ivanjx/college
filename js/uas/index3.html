@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <title>Aplikasi Kasir Sederhana</title>
+        <style>
+            .title {
+                background-color: blueviolet;
+                color: white;
+                text-align: center;
+                line-height: 100px;
+                height: 100px;
+            }
+
+            .table {
+                width: 100%;
+                margin-top: 20px;
+                border-spacing: 0;
+            }
+
+            .table .header td {
+                border-bottom: 3px solid blueviolet;
+            }
+
+            .table td {
+                padding: 10px;
+            }
+
+            .hitung {
+                background-color: blueviolet;
+                color: white;
+                height: 30px;
+                border-radius: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            let list = {
+                'buavita': 27000,
+                'suky': 9000,
+                'luwak': 19000,
+                'kitkat': 25000,
+                'regal': 16000
+            };
+
+            function read(n) {
+                let res = parseFloat(document.iform[n].value);
+
+                if(isNaN(res))
+                {
+                    return 0;
+                }
+
+                return res;
+            }
+
+            function hitung() {
+                let total = 0;
+
+                total += read('buavita') * list['buavita'];
+                total += read('suky') * list['suky'];
+                total += read('luwak') * list['luwak'];
+                total += read('kitkat') * list['kitkat'];
+                total += read('regal') * list['regal'];
+
+                document.iform.total.value = 'Rp ' + total.toLocaleString() + ',00';
+            }
+        </script>
+
+        <form name="iform">
+            <div class="title">
+                <h2>Aplikasi Kasir Sederhana</h2>
+            </div>
+
+            <table class="table">
+                <tr class="header">
+                    <td>No</td>
+                    <td>Produk</td>
+                    <td>Harga Satuan</td>
+                    <td>Jumlah Beli</td>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Buavita Jambu</td>
+                    <td>Rp 27.000,00</td>
+                    <td>
+                        <input type="text" name="buavita"> pcs
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Suky Suky</td>
+                    <td>Rp 9.000,00</td>
+                    <td>
+                        <input type="text" name="suky"> pcs
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Luwak White Koffie</td>
+                    <td>Rp 19.000,00</td>
+                    <td>
+                        <input type="text" name="luwak"> pcs
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>KitKat 6 pcs</td>
+                    <td>Rp 25.000,00</td>
+                    <td>
+                        <input type="text" name="kitkat"> pcs
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>Regal Medium</td>
+                    <td>Rp 16.000,00</td>
+                    <td>
+                        <input type="text" name="regal"> pcs
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="button" value="✓ Hitung" onclick="hitung()" class="hitung">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td align="right">Total Bayar:</td>
+                    <td>
+                        <input type="text" name="total" readonly>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
