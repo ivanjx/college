@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Kalkulator</title>
+    </head>
+    <body>
+        <script>
+            function hitung(op) {
+                let a1 = parseFloat(document.iform.a1.value);
+                let a2 = parseFloat(document.iform.a2.value);
+                let result = 0;
+
+                switch(op) {
+                    case '+':
+                        result = a1 + a2;
+                        break;
+                    case '-':
+                        result = a1 - a2;
+                        break;
+                    case '*':
+                        result = a1 * a2;
+                        break;
+                    case '/':
+                        result = a1 / a2;
+                        break;
+                }
+
+                document.iform.result.value = result;
+            }
+        </script>
+
+        <form name="iform">
+            <pre>Angka 1    :<input type="text" name="a1"></pre>
+            <pre>Angka 2    :<input type="text" name="a2"></pre>
+            <input type="button" value="+" onclick="hitung('+')">
+            <input type="button" value="-" onclick="hitung('-')">
+            <input type="button" value="*" onclick="hitung('*')">
+            <input type="button" value="/" onclick="hitung('/')">
+            <pre>Hasil      :<input type="text" name="result" readonly></pre>
+        </form>
+    </body>
+</html>
