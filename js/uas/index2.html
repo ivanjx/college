@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>PENDAFTARAN PASIEN PUSKESMAS SITU UDIK KAB BOGOR</title>
+    </head>
+    <body>
+        <script>
+            function read(n) {
+                return document.iform[n].value;
+            }
+
+            function set(n, val) {
+                document.oform[n].value = val; 
+            }
+
+            function getkelamin(n) {
+                if(n == 'pria') {
+                    return "Pria";
+                }
+
+                return "Wanita";
+            }
+
+            function getpoli(n) {
+                switch(n) {
+                    case 'umum': return "Poli Umum";
+                    case 'gigi': return "Poli Gigi";
+                    case 'kandungan': return "Poli Kandungan dan Anak";
+                    case 'ugd': return "Poli UGD";
+                    case 'farmasi': return "Poli Farmasi";
+                }
+            }
+
+            function kirim() {
+                set('nama', read('nama'));
+                set('tgllahir', read('tgllahir'));
+                set('kelamin', getkelamin(read('kelamin')));
+                set('alamat', read('alamat'));
+                set('keluhan', read('keluhan'));
+                set('poli', getpoli(read('poli')));
+                set('hp', read('hp'));
+            }
+        </script>
+
+        <h3>PENDAFTARAN PASIEN PUSKESMAS SITU UDIK KAB BOGOR</h3>
+
+        <br/>
+        
+        <form name="iform">
+            <pre>Nama           : <input type="text" name="nama"></pre>
+            <pre>Tanggal Lahir  : <input type="date" name="tgllahir"></pre>
+            <pre>Jenis Kelamin  : <input type="radio" name="kelamin" value="pria">Pria</input><input type="radio" name="kelamin" value="wanita">Wanita</input></pre>
+            <pre>Alamat         : <textarea name="alamat" cols="20" rows="5"></textarea></pre>
+            <pre>Keluhan        : <textarea name="keluhan" cols="20" rows="5"></textarea></pre>
+            <pre>Poli tujuan    : <select name="poli">
+                <option value="gigi">Poli Gigi</option>
+                <option value="umum">Poli Umum</option>
+                <option value="kandungan">Poli Kandungan dan Anak</option>
+                <option value="ugd">Poli UGD</option>
+                <option value="farmasi">Poli Farmasi</option>
+            </select></pre>
+            <pre>No HP          : <input type="text" name="hp"></pre>
+            
+            <input type="button" value="Kirim" onclick="kirim()">
+            <input type="reset" value="Kembali">
+        </form>
+
+        <br/>
+        <pre>HASIL</pre>
+        <form name="oform">
+            <pre>Nama           : <input type="text" name="nama" readonly></pre>
+            <pre>Tanggal Lahir  : <input type="text" name="tgllahir" readonly></pre>
+            <pre>Jenis Kelamin  : <input type="text" name="kelamin" readonly></pre>
+            <pre>Alamat         : <textarea name="alamat" cols="20" rows="5" readonly></textarea></pre>
+            <pre>Keluhan        : <textarea name="keluhan" cols="20" rows="5" readonly></textarea></pre>
+            <pre>Poli tujuan    : <input type="text" name="poli" readonly></pre>
+            <pre>No HP          : <input type="text" name="hp" readonly></pre>
+        </form>
+    </body>
+</html>
