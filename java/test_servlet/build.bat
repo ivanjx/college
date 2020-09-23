@@ -1,12 +1,22 @@
-REM Compiling
-javac -classpath src\WEB-INF\lib\servlet.jar src\WEB-INF\HelloServlet.java
+REM Preparing
+mkdir bin\WEB-INF\classes
+mkdir bin\WEB-INF\lib
 
-REM Moving to classes
-mkdir src\WEB-INF\classes
-move src\WEB-INF\HelloServlet.class src\WEB-INF\classes\HelloServlet.class
+REM Compiling
+javac -classpath lib\servlet.jar -d bin\WEB-INF\classes src\WEB-INF\HelloServlet.java
+
+REM Copying files
+xcopy src bin /h /i /c /k /e /r /y
+del /S bin\*.java
+
+REM Copying lib
+xcopy lib bin\WEB-INF\lib /h /i /c /k /e /r /y
 
 REM Packaging
-cd src
+cd bin
 jar cvf test.war .
+move test.war ..\test.war
 cd ..
-move src\test.war test.war
+
+REM Cleaning up
+rmdir bin /S /Q
