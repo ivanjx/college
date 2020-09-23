@@ -1,11 +1,11 @@
 <web-app>
     <servlet>
-        <servlet-name>TestAPI</servlet-name>
+        <servlet-name>Hello</servlet-name>
         <servlet-class>HelloServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>TestAPI</servlet-name>
-        <url-pattern>/api/test</url-pattern>
+        <servlet-name>Hello</servlet-name>
+        <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 </web-app>
