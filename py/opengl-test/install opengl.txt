@@ -1,0 +1,2 @@
+1. Download whl from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyopengl
+2. Run pip install <whlpath>
