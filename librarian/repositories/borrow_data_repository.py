@@ -33,3 +33,9 @@ class borrow_data_repository:
             x for x in self.borrow_data_list
             if x.nim != nim
         ]
+
+    def delete_by_isbn(self, isbn):
+        self.borrow_data_list = [
+            x for x in self.borrow_data_list
+            if x.isbn != isbn
+        ]
