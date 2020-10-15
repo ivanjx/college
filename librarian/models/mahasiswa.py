@@ -1,4 +1,4 @@
-class borrower:
+class mahasiswa:
     def __init__(self):
         self.nim = ""
         self.nama = ""
