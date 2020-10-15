@@ -4,3 +4,4 @@ class book:
         self.nama = ""
         self.pengarang = ""
         self.tahun_terbit = 0
+        self.qty = 0

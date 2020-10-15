@@ -17,6 +17,7 @@ class book_repository:
 
     def update(self, data):
         book = self.get(data.isbn)
-        book.name = data.name
+        book.nama = data.nama
         book.pengarang = data.pengarang
         book.tahun_terbit = data.tahun_terbit
+        book.qty = data.qty
