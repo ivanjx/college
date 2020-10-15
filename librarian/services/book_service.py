@@ -20,6 +20,9 @@ class book_service:
         if not data.tahun_terbit:
             raise Exception("tahun terbit kosong")
 
+        if data.qty < 0:
+            raise Exception("jumlah buku invalid")
+
         dupe = self.book_repo.get(data.isbn)
 
         if dupe:
