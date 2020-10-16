@@ -38,7 +38,12 @@ def print_list_buku():
     counter = 1
 
     for book in books:
-        print("{}. {}. Tahun {}. Oleh {}. Tersedia {}".format(counter, book.nama, book.tahun_terbit, book.pengarang, book.qty))
+        print("{}. Judul:\t\t{}".format(counter, book.nama))
+        print("   ISBN:\t\t{}".format(book.isbn))
+        print("   Pengarang:\t\t{}".format(book.pengarang))
+        print("   Tahun Terbit:\t{}".format(book.tahun_terbit))
+        print("   Ketersediaan:\t{}".format(book.qty))
+        print()
         counter += 1
 
     return books
@@ -49,7 +54,6 @@ def list_buku():
     print("Aplikasi Perpustakaan ISTN - Manajemen Buku - List Buku")
     print_list_buku()
 
-    print()
     print("Menu:")
     print("1. Kembali")
     choice = input_choice()
@@ -96,7 +100,6 @@ def edit_buku():
     books = print_list_buku()
 
     try:
-        print()
         choice = int(input("Nomor buku: "))
         
         if choice > len(books):
@@ -141,7 +144,6 @@ def hapus_buku():
     books = print_list_buku()
 
     try:
-        print()
         choice = int(input("Nomor buku: "))
         
         if choice > len(books):
@@ -199,7 +201,10 @@ def print_list_mhs():
     counter = 1
 
     for m in mahasiswa:
-        print("{}. {}. {}. {}".format(counter, m.nim, m.nama, m.jurusan))
+        print("{}. Nama:\t{}".format(counter, m.nama))
+        print("   NIM:\t\t{}".format(m.nim))
+        print("   Jurusan:\t{}".format(m.jurusan))
+        print()
         counter += 1
 
     return mahasiswa
@@ -210,7 +215,6 @@ def list_mhs():
     print("Aplikasi Perpustakaan ISTN - Manajemen Mahasiswa - List Mahasiswa")
     print_list_mhs()
 
-    print()
     print("Menu:")
     print("1. Kembali")
     choice = input_choice()
@@ -255,7 +259,6 @@ def edit_mhs():
     mhs = print_list_mhs()
 
     try:
-        print()
         choice = int(input("Nomor mahasiswa: "))
         
         if choice > len(mhs):
@@ -294,7 +297,6 @@ def hapus_mhs():
     mhs = print_list_mhs()
 
     try:
-        print()
         choice = int(input("Nomor mahasiswa: "))
         
         if choice > len(mhs):
