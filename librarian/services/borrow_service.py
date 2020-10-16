@@ -32,7 +32,7 @@ class borrow_service:
 
         dupe = self.borrow_repo.get(nim, isbn)
 
-        if dupe:
+        if dupe and not dupe.is_returned:
             raise Exception("nim dan isbn yang sama sudah terdata")
 
         # Subtracting qty.
