@@ -488,6 +488,68 @@ def kembalikan_buku():
         return False
 
 
+def cek_status_peminjaman():
+    clear()
+    print("Aplikasi Perpustakaan ISTN / Manajemen Peminjaman / Cek Status Peminjaman")
+
+    try:
+            # Prompting book.
+        isbn = input("ISBN: ")
+        book = book_repo.get(isbn)
+
+        if not book:
+            raise Exception("buku tidak ditemukan")
+
+        # Print book info.
+        print("Judul: {}".format(book.nama))
+        print("Pengarang: {}".format(book.pengarang))
+        print("Tahun terbit: {}".format(book.tahun_terbit))
+        print()
+
+        # Prompting mahasiswa
+        nim = input("NIM: ")
+        mhs = mahasiswa_repo.get(nim)
+
+        if not mhs:
+            raise Exception("mahasiswa tidak ditemukan")
+
+        # Print mhs info.
+        print("Nama: {}".format(mhs.nama))
+        print("Jurusan: {}".format(mhs.jurusan))
+
+        # Getting borrow data.
+        bd = borrow_data_repo.get(nim, isbn)
+
+        if bd == None:
+            raise Exception("data peminjaman tidak ditemukan")
+
+        status = "SEDANG DIPINJAM"
+
+        if bd.is_returned:
+            status = "DIKEMBALIKAN"
+
+        print()
+        print("Status:", status)
+
+        if bd.is_returned:
+            print("Tanggal:", bd.return_date)
+    except Exception as e:
+        print("Error:", e)
+
+    print()
+    print("Menu:")
+    print("1. Ulangi")
+    print("2. Kembali")
+    choice = input_choice()
+
+    if choice == 2:
+        return False
+
+    if not cek_status_peminjaman():
+        return False
+
+
+
 def borrow_menu():
     clear()
     print("Aplikasi Perpustakaan ISTN / Manajemen Peminjaman")
@@ -495,7 +557,8 @@ def borrow_menu():
     print("1. List peminjaman")
     print("2. Pinjam buku")
     print("3. Kembalikan buku")
-    print("4. Kembali ke menu utama")
+    print("4. Cek status peminjaman")
+    print("5. Kembali ke menu utama")
     choice = input_choice()
 
     if choice == 1:
@@ -505,6 +568,8 @@ def borrow_menu():
     elif choice == 3:
         kembalikan_buku()
     elif choice == 4:
+        cek_status_peminjaman()
+    else:
         return False
 
     if not borrow_menu():
