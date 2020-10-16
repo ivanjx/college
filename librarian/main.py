@@ -14,22 +14,18 @@ from services.mahasiswa_service import mahasiswa_service
 from services.borrow_service import borrow_service
 
 
-def create_books(book_svc):
-    b = book()
-    b.isbn = "123456789"
-    b.nama = "buku 1"
-    b.pengarang = "ivan"
-    b.tahun_terbit = 2010
-    b.qty = 1
-    book_svc.create(b)
+def create_mhs(mhs_svc):
+    m = mahasiswa()
+    m.nim = "001"
+    m.nama = "ivan juan kara"
+    m.jurusan = "teknik informatika"
+    mhs_svc.create(m)
 
-    b = book()
-    b.isbn = "123123123"
-    b.nama = "buku 2"
-    b.pengarang = "ivan"
-    b.tahun_terbit = 2011
-    b.qty = 3
-    book_svc.create(b)
+    m = mahasiswa()
+    m.nim = "002"
+    m.nama = "john doe"
+    m.jurusan = "teknik informatika"
+    mhs_svc.create(m)
 
 
 def main():
@@ -42,10 +38,9 @@ def main():
     book_svc = book_service(book_repo, borrow_data_repo)
     mahasiswa_svc = mahasiswa_service(mahasiswa_repo, borrow_data_repo)
     borrow_svc = borrow_service(book_repo, mahasiswa_repo, borrow_data_repo)
-
-    # Creating books.
-    create_books(book_svc)
-    print()
+    
+    # Creating mhs.
+    create_mhs(mahasiswa_svc)
 
 
 main()
