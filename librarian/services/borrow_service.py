@@ -24,18 +24,16 @@ class borrow_service:
         if not mhs:
             raise Exception("nim tidak terdaftar")
 
-
-    def validate_borrow(self, nim, isbn):
-        dupe = self.borrow_repo
-
-        if dupe:
-            raise Exception("nim dan isbn yang sama sudah meminjam")
-
     
     def borrow(self, nim, isbn):
         # Validating.
         self.validate_nim(nim)
         self.validate_isbn(isbn)
+
+        dupe = self.borrow_repo.get(nim, isbn)
+
+        if dupe:
+            raise Exception("nim dan isbn yang sama sudah terdata")
 
         # Subtracting qty.
         self.book_repo.sub_qty_1(isbn)
