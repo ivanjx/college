@@ -73,14 +73,6 @@ class borrow_data_repository:
         return None
 
 
-    def list_by_mhs_nim(self, nim):
-        return [x for x in self.borrow_data_list if x.nim == nim]
-
-
-    def list_by_book_isbn(self, isbn):
-        return [x for x in self.borrow_data_list if x.isbn == isbn]
-
-
     def list_non_returned(self):
         return [
             x for x in self.borrow_data_list
