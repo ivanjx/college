@@ -83,6 +83,56 @@ def tambah_buku():
         return False
 
 
+def edit_buku():
+    clear()
+    print("Aplikasi Perpustakaan ISTN - Manajemen Buku - Edit Buku")
+    print("Daftar buku:")
+    books = book_repo.list_all()
+    counter = 1
+
+    for book in books:
+        print("{}. {}. Tahun {}. Oleh {}. Tersedia {}".format(counter, book.nama, book.tahun_terbit, book.pengarang, book.qty))
+        counter += 1
+
+    try:
+        print()
+        choice = int(input("Nomor buku: "))
+        
+        if choice > len(books):
+            raise Exception("nomor buku tidak valid")
+        
+        b = books[choice - 1]
+        inama = input("Nama/Judul [{}]: ".format(b.nama))
+        ipengarang = input("Nama Pengarang [{}]: ".format(b.pengarang))
+        itahun_terbit = input("Tahun Terbit [{}]: ".format(b.tahun_terbit))
+        iqty = input("Jumlah Tersedia [{}]: ".format(b.qty))
+        
+        if inama:
+            b.nama = inama
+        if ipengarang:
+            b.pengarang = ipengarang
+        if itahun_terbit:
+            b.tahun_terbit = int(itahun_terbit)
+        if iqty:
+            b.qty = int(iqty)
+        
+        book_svc.update(b)
+    except Exception as e:
+        print("Error:", e)
+
+    print()
+    print("Menu:")
+    print("1. Ulangi")
+    print("2. Kembali")
+    choice = input_choice()
+
+    if choice == 2:
+        return False
+
+    if not edit_buku():
+        return False
+
+
 def book_menu():
     clear()
     print("Aplikasi Perpustakaan ISTN - Manajemen Buku")
@@ -99,7 +149,7 @@ def book_menu():
     elif choice == 2:
         tambah_buku()
     elif choice == 3:
-        pass
+        edit_buku()
     elif choice == 4:
         pass
     elif choice == 5:
