@@ -33,15 +33,21 @@ def input_choice():
         input_choice()
 
 
-def list_buku():
-    clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Buku - List Buku")
+def print_list_buku():
     books = book_repo.list_all()
     counter = 1
 
     for book in books:
         print("{}. {}. Tahun {}. Oleh {}. Tersedia {}".format(counter, book.nama, book.tahun_terbit, book.pengarang, book.qty))
         counter += 1
+
+    return books
+
+
+def list_buku():
+    clear()
+    print("Aplikasi Perpustakaan ISTN - Manajemen Buku - List Buku")
+    print_list_buku()
 
     print()
     print("Menu:")
@@ -87,12 +93,7 @@ def edit_buku():
     clear()
     print("Aplikasi Perpustakaan ISTN - Manajemen Buku - Edit Buku")
     print("Daftar buku:")
-    books = book_repo.list_all()
-    counter = 1
-
-    for book in books:
-        print("{}. {}. Tahun {}. Oleh {}. Tersedia {}".format(counter, book.nama, book.tahun_terbit, book.pengarang, book.qty))
-        counter += 1
+    books = print_list_buku()
 
     try:
         print()
