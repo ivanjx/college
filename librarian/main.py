@@ -33,6 +33,56 @@ def input_choice():
         input_choice()
 
 
+def list_buku():
+    clear()
+    print("Aplikasi Perpustakaan ISTN - Manajemen Buku - List Buku")
+    books = book_repo.list_all()
+    counter = 1
+
+    for book in books:
+        print("{}. {}. Tahun {}. Oleh {}. Tersedia {}".format(counter, book.nama, book.tahun_terbit, book.pengarang, book.qty))
+        counter += 1
+
+    print()
+    print("Menu:")
+    print("1. Kembali")
+    choice = input_choice()
+    
+    if choice == 1:
+        return False
+
+    if not list_buku():
+        return False
+
+
+def tambah_buku():
+    clear()
+    print("Aplikasi Perpustakaan ISTN - Manajemen Buku - Tambah Buku")
+    
+    try:
+        b = book()
+        b.isbn = input("ISBN: ")
+        b.nama = input("Nama/Judul: ")
+        b.pengarang = input("Nama Pengarang: ")
+        b.tahun_terbit = int(input("Tahun Terbit: "))
+        b.qty = int(input("Jumlah Tersedia: "))
+        book_svc.create(b)
+    except Exception as e:
+        print("Error:", e)
+
+    print()
+    print("Pilihan:")
+    print("1. Ulangi")
+    print("2. Kembali")
+    choice = input_choice()
+
+    if choice == 2:
+        return False
+
+    if not tambah_buku():
+        return False
+
+
 def book_menu():
     clear()
     print("Aplikasi Perpustakaan ISTN - Manajemen Buku")
@@ -45,9 +95,9 @@ def book_menu():
     choice = input_choice()
 
     if choice == 1:
-        pass
+        list_buku()
     elif choice == 2:
-        pass
+        tambah_buku()
     elif choice == 3:
         pass
     elif choice == 4:
