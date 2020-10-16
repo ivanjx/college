@@ -58,6 +58,9 @@ class borrow_service:
         if not data:
             raise Exception("data peminjaman tidak ditemukan")
 
+        if data.is_returned:
+            raise Exception("data peminjaman invalid")
+
         # Setting return date to now.
         self.borrow_repo.set_return_date(nim, isbn, datetime.now())
 
