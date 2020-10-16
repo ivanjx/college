@@ -194,6 +194,133 @@ def book_menu():
         return False
 
 
+def print_list_mhs():
+    mahasiswa = mahasiswa_repo.list_all()
+    counter = 1
+
+    for m in mahasiswa:
+        print("{}. {}. {}. {}".format(counter, m.nim, m.nama, m.jurusan))
+        counter += 1
+
+    return mahasiswa
+
+
+def list_mhs():
+    clear()
+    print("Aplikasi Perpustakaan ISTN - Manajemen Mahasiswa - List Mahasiswa")
+    print_list_mhs()
+
+    print()
+    print("Menu:")
+    print("1. Kembali")
+    choice = input_choice()
+    
+    if choice == 1:
+        return False
+
+    if not list_mhs():
+        return False
+
+
+def tambah_mhs():
+    clear()
+    print("Aplikasi Perpustakaan ISTN - Manajemen Mahasiswa - Tambah Mahasiswa")
+    
+    try:
+        m = mahasiswa()
+        m.nim = input("NIM: ")
+        m.nama = input("Nama: ")
+        m.jurusan = input("Jurusan: ")
+        mahasiswa_svc.create(m)
+    except Exception as e:
+        print("Error:", e)
+
+    print()
+    print("Pilihan:")
+    print("1. Ulangi")
+    print("2. Kembali")
+    choice = input_choice()
+
+    if choice == 2:
+        return False
+
+    if not tambah_mhs():
+        return False
+
+
+def edit_mhs():
+    clear()
+    print("Aplikasi Perpustakaan ISTN - Manajemen Mahasiswa - Edit Mahasiswa")
+    print("Daftar mahasiswa:")
+    mhs = print_list_mhs()
+
+    try:
+        print()
+        choice = int(input("Nomor mahasiswa: "))
+        
+        if choice > len(mhs):
+            raise Exception("nomor mahasiswa tidak valid")
+        
+        m = mhs[choice - 1]
+        inama = input("Nama [{}]: ".format(m.nama))
+        ijurusan = input("Jurusan [{}]: ".format(m.jurusan))
+        
+        if inama:
+            m.nama = inama
+        if ijurusan:
+            m.jurusan = ijurusan
+        
+        mahasiswa_svc.update(m)
+    except Exception as e:
+        print("Error:", e)
+
+    print()
+    print("Menu:")
+    print("1. Ulangi")
+    print("2. Kembali")
+    choice = input_choice()
+
+    if choice == 2:
+        return False
+
+    if not edit_mhs():
+        return False
+
+
+def hapus_mhs():
+    clear()
+    print("Aplikasi Perpustakaan ISTN - Manajemen Mahasiswa - Hapus Mahasiswa")
+    print("Daftar mahasiswa:")
+    mhs = print_list_mhs()
+
+    try:
+        print()
+        choice = int(input("Nomor mahasiswa: "))
+        
+        if choice > len(mhs):
+            raise Exception("nomor mahasiswa tidak valid")
+        
+        m = mhs[choice - 1]
+        choice = input("Apakah anda yakin ingin menghapus mahasiswa '{}' (y/N)? ".format(m.nama))
+
+        if choice == "y":
+            mahasiswa_svc.delete(m.nim)
+    except Exception as e:
+        print("Error:", e)
+
+    print()
+    print("Menu:")
+    print("1. Ulangi")
+    print("2. Kembali")
+    choice = input_choice()
+
+    if choice == 2:
+        return False
+
+    if not hapus_mhs():
+        return False
+
+
 def mhs_menu():
     clear()
     print("Aplikasi Perpustakaan ISTN - Manajemen Mahasiswa")
@@ -206,13 +333,13 @@ def mhs_menu():
     choice = input_choice()
 
     if choice == 1:
-        pass
+        list_mhs()
     elif choice == 2:
-        pass
+        tambah_mhs()
     elif choice == 3:
-        pass
+        edit_mhs()
     elif choice == 4:
-        pass
+        hapus_mhs()
     elif choice == 5:
         return False
 
