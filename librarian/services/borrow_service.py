@@ -37,6 +37,9 @@ class borrow_service:
         self.validate_nim(nim)
         self.validate_isbn(isbn)
 
+        # Subtracting qty.
+        self.book_repo.sub_qty_1(isbn)
+
         # Creating.
         data = borrow_data()
         data.nim = nim
@@ -59,3 +62,6 @@ class borrow_service:
 
         # Setting return date to now.
         self.borrow_repo.set_return_date(datetime.now())
+
+        # Adding qty.
+        self.book_repo.add_qty_1(isbn)
