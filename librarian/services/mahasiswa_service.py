@@ -3,7 +3,7 @@ class mahasiswa_service:
         self.mahasiswa_repo = mahasiswa_repo
         self.borrow_data_repo = borrow_data_repo
 
-    def validate(self, data):
+    def validate(self, data, isupdate = False):
         if not data:
             raise Exception("data is null")
 
@@ -15,6 +15,9 @@ class mahasiswa_service:
 
         if not data.jurusan:
             raise Exception("jurusan kosong")
+
+        if isupdate:
+            return
 
         dupe = self.mahasiswa_repo.get(data.nim)
 
@@ -32,7 +35,7 @@ class mahasiswa_service:
 
     def update(self, data):
         # Validating.
-        self.validate(data)
+        self.validate(data, True)
 
         # Updating.
         self.mahasiswa_repo.update(data)

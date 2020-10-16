@@ -4,7 +4,7 @@ class book_service:
         self.borrow_data_repo = borrow_data_repo
 
 
-    def validate(self, data):
+    def validate(self, data, isupdate = False):
         if not data:
             raise Exception("data is null")
 
@@ -23,6 +23,9 @@ class book_service:
         if data.qty < 0:
             raise Exception("jumlah buku invalid")
 
+        if isupdate:
+            return
+
         dupe = self.book_repo.get(data.isbn)
 
         if dupe:
@@ -39,7 +42,7 @@ class book_service:
 
     def update(self, data):
         # Validating.
-        self.validate(data)
+        self.validate(data, True)
 
         # Updating.
         self.book_repo.update(data)
