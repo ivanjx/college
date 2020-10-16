@@ -134,6 +134,40 @@ def edit_buku():
         return False
 
 
+def hapus_buku():
+    clear()
+    print("Aplikasi Perpustakaan ISTN - Manajemen Buku - Hapus Buku")
+    print("Daftar buku:")
+    books = print_list_buku()
+
+    try:
+        print()
+        choice = int(input("Nomor buku: "))
+        
+        if choice > len(books):
+            raise Exception("nomor buku tidak valid")
+        
+        b = books[choice - 1]
+        choice = input("Apakah anda yakin ingin menghapus buku '{}' (y/N)? ".format(b.nama))
+
+        if choice == "y":
+            book_svc.delete(b.isbn)
+    except Exception as e:
+        print("Error:", e)
+
+    print()
+    print("Menu:")
+    print("1. Ulangi")
+    print("2. Kembali")
+    choice = input_choice()
+
+    if choice == 2:
+        return False
+
+    if not hapus_buku():
+        return False
+
+
 def book_menu():
     clear()
     print("Aplikasi Perpustakaan ISTN - Manajemen Buku")
@@ -152,7 +186,7 @@ def book_menu():
     elif choice == 3:
         edit_buku()
     elif choice == 4:
-        pass
+        hapus_buku()
     elif choice == 5:
         return False
 
