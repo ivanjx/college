@@ -59,7 +59,7 @@ class borrow_service:
             raise Exception("data peminjaman tidak ditemukan")
 
         # Setting return date to now.
-        self.borrow_repo.set_return_date(datetime.now())
+        self.borrow_repo.set_return_date(nim, isbn, datetime.now())
 
         # Adding qty.
         self.book_repo.add_qty_1(isbn)
