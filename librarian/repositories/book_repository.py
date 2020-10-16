@@ -56,6 +56,10 @@ class book_repository:
         self.load()
 
 
+    def list_all(self):
+        return self.books
+
+
     def create(self, book):
         self.books.append(book)
         self.save()

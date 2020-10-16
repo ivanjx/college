@@ -55,6 +55,10 @@ class mahasiswa_repository:
         self.load()
 
 
+    def list_all(self):
+        return self.mhs
+
+
     def create(self, mahasiswa):
         self.mhs.append(mahasiswa)
         self.save()
