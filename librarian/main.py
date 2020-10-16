@@ -30,7 +30,7 @@ def input_choice():
         return int(s)
     except:
         print("Input anda tidak valid, mohon input angka sesuai pilihan yang tersedia.")
-        input_choice()
+        return input_choice()
 
 
 def print_list_buku():
