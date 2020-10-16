@@ -57,11 +57,12 @@ class borrow_data_repository:
 
 
     def __init__(self):
-        self.borrow_data_list = []
+        self.load()
 
 
     def create(self, borrow_data):
         self.borrow_data_list.append(borrow_data)
+        self.save()
 
 
     def get(self, nim, isbn):
@@ -91,6 +92,7 @@ class borrow_data_repository:
         data = self.get(nim, isbn)
         data.is_returned = True
         data.return_date = date
+        self.save()
 
 
     def delete_by_nim(self, nim):
@@ -98,6 +100,7 @@ class borrow_data_repository:
             x for x in self.borrow_data_list
             if x.nim != nim
         ]
+        self.save()
 
 
     def delete_by_isbn(self, isbn):
@@ -105,3 +108,4 @@ class borrow_data_repository:
             x for x in self.borrow_data_list
             if x.isbn != isbn
         ]
+        self.save()
