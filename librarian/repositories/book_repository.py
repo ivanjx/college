@@ -68,6 +68,18 @@ class book_repository:
         
         return None
 
+    
+    def add_qty_1(self, isbn):
+        book = self.get(isbn)
+        book.qty += 1
+        self.save()
+
+
+    def sub_qty_1(self, isbn):
+        book = self.get(isbn)
+        book.qty -= 1
+        self.save()
+
 
     def delete(self, book_isbn):
         self.books = [x for x in self.books if x.isbn != book_isbn]
