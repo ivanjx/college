@@ -77,6 +77,7 @@ def tambah_buku():
         b.tahun_terbit = int(input("Tahun Terbit: "))
         b.qty = int(input("Jumlah Tersedia: "))
         book_svc.create(b)
+        print("Buku berhasil ditambah.")
     except Exception as e:
         print("Error:", e)
 
@@ -121,6 +122,7 @@ def edit_buku():
             b.qty = int(iqty)
         
         book_svc.update(b)
+        print("Buku berhasil diupdate.")
     except Exception as e:
         print("Error:", e)
 
@@ -154,6 +156,7 @@ def hapus_buku():
 
         if choice == "y":
             book_svc.delete(b.isbn)
+            print("Buku berhasil dihapus.")
     except Exception as e:
         print("Error:", e)
 
@@ -236,6 +239,7 @@ def tambah_mhs():
         m.nama = input("Nama: ")
         m.jurusan = input("Jurusan: ")
         mahasiswa_svc.create(m)
+        print("Mahasiswa berhasil ditambahkan.")
     except Exception as e:
         print("Error:", e)
 
@@ -274,6 +278,7 @@ def edit_mhs():
             m.jurusan = ijurusan
         
         mahasiswa_svc.update(m)
+        print("Update data berhasil.")
     except Exception as e:
         print("Error:", e)
 
@@ -307,6 +312,7 @@ def hapus_mhs():
 
         if choice == "y":
             mahasiswa_svc.delete(m.nim)
+            print("Mahasiswa berhasil dihapus.")
     except Exception as e:
         print("Error:", e)
 
@@ -349,26 +355,150 @@ def mhs_menu():
         return False
 
 
+def list_peminjaman():
+    clear()
+    print("Aplikasi Perpustakaan ISTN / Manajemen Peminjaman / List Peminjam")
+    data = borrow_data_repo.list_non_returned()
+
+    for d in data:
+        print("isbn {} dipinjam oleh {} pada tanggal {}".format(d.isbn, d.nim, d.start_date))
+        print()
+
+    print("Menu:")
+    print("1. Kembali")
+    choice = input_choice()
+
+    if choice == 1:
+        return False
+
+    if not list_peminjaman():
+        return False
+
+
+def pinjam_buku():
+    clear()
+    print("Aplikasi Perpustakaan ISTN / Manajemen Peminjaman / Pinjam Buku")
+
+    try:
+        # Prompting book.
+        isbn = input("ISBN: ")
+        book = book_repo.get(isbn)
+
+        if not book:
+            raise Exception("buku tidak ditemukan")
+
+        if book.qty == 0:
+            raise Exception("ketersediaan buku tidak valid")
+
+        # Print book info.
+        print("Judul: {}".format(book.nama))
+        print("Pengarang: {}".format(book.pengarang))
+        print("Tahun terbit: {}".format(book.tahun_terbit))
+        print()
+
+        # Prompting mahasiswa
+        nim = input("NIM: ")
+        mhs = mahasiswa_repo.get(nim)
+
+        if not mhs:
+            raise Exception("mahasiswa tidak ditemukan")
+
+        # Print mhs info.
+        print("Nama: {}".format(mhs.nama))
+        print("Jurusan: {}".format(mhs.jurusan))
+
+        print()
+        choice = input("Apakah data sudah benar (y/N)? ")
+
+        if choice == "y":
+            # Saving.
+            borrow_svc.borrow(nim, isbn)
+            print("Buku berhasil dipinjam.")
+    except Exception as e:
+        print("Error", e)
+
+    print()
+    print("Menu:")
+    print("1. Ulangi")
+    print("2. Kembali")
+    choice = input_choice()
+
+    if choice == 2:
+        return False
+
+    if not pinjam_buku():
+        return False
+
+
+def kembalikan_buku():
+    clear()
+    print("Aplikasi Perpustakaan ISTN / Manajemen Peminjaman / Pengembalian Buku")
+
+    try:
+        # Prompting book.
+        isbn = input("ISBN: ")
+        book = book_repo.get(isbn)
+
+        if not book:
+            raise Exception("buku tidak ditemukan")
+
+        # Print book info.
+        print("Judul: {}".format(book.nama))
+        print("Pengarang: {}".format(book.pengarang))
+        print("Tahun terbit: {}".format(book.tahun_terbit))
+        print()
+
+        # Prompting mahasiswa
+        nim = input("NIM: ")
+        mhs = mahasiswa_repo.get(nim)
+
+        if not mhs:
+            raise Exception("mahasiswa tidak ditemukan")
+
+        # Print mhs info.
+        print("Nama: {}".format(mhs.nama))
+        print("Jurusan: {}".format(mhs.jurusan))
+
+        print()
+        choice = input("Apakah data sudah benar (y/N)? ")
+
+        if choice == "y":
+            # Saving.
+            borrow_svc.done_borrow(nim, isbn)
+            print("Buku berhasil dikembalikan.")
+    except Exception as e:
+        print("Error", e)
+
+    print()
+    print("Menu:")
+    print("1. Ulangi")
+    print("2. Kembali")
+    choice = input_choice()
+
+    if choice == 2:
+        return False
+
+    if not kembalikan_buku():
+        return False
+
+
 def borrow_menu():
     clear()
     print("Aplikasi Perpustakaan ISTN / Manajemen Peminjaman")
     print("Menu:")
-    print("1. List peminjam")
-    print("2. List buku yang dipinjam")
-    print("3. Pinjam buku")
-    print("4. Kembalikan buku")
-    print("5. Kembali ke menu utama")
+    print("1. List peminjaman")
+    print("2. Pinjam buku")
+    print("3. Kembalikan buku")
+    print("4. Kembali ke menu utama")
     choice = input_choice()
 
     if choice == 1:
-        pass
+        list_peminjaman()
     elif choice == 2:
-        pass
+        pinjam_buku()
     elif choice == 3:
-        pass
+        kembalikan_buku()
     elif choice == 4:
-        pass
-    elif choice == 5:
         return False
 
     if not borrow_menu():
