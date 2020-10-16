@@ -26,6 +26,7 @@ class borrow_data_repository:
 
     def set_return_date(self, nim, isbn, date):
         data = self.get(nim, isbn)
+        data.is_returned = True
         data.return_date = date
 
     def delete_by_nim(self, nim):
