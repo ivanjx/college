@@ -5,10 +5,5 @@ class borrow_data:
         self.nim = ""
         self.isbn = ""
         self.start_date = datetime.now()
+        self.is_returned = False
         self.return_date = datetime.now()
-
-    def is_borrowing(self):
-        return self.start_date > datetime.now()
-
-    def is_returned(self):
-        return self.return_date != None

@@ -14,7 +14,7 @@ class borrow_data_repository:
     def get_non_returned(self):
         return [
             x for x in self.borrow_data_list
-            if not x.is_returned()
+            if not x.is_returned
         ]
 
     def get(self, nim, isbn):
