@@ -29,6 +29,7 @@ class book_repository:
                     b.nama = r["nama"]
                     b.pengarang = r["pengarang"]
                     b.tahun_terbit = r["tahun_terbit"]
+                    b.qty = r["qty"]
                     self.books.append(b)
 
 
@@ -46,6 +47,7 @@ class book_repository:
                 r["nama"] = b.nama
                 r["pengarang"] = b.pengarang
                 r["tahun_terbit"] = b.tahun_terbit
+                r["qty"] = b.qty
                 raw["data"].append(r)
 
             # Saving.
