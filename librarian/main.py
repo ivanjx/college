@@ -359,10 +359,16 @@ def list_peminjaman():
     clear()
     print("Aplikasi Perpustakaan ISTN / Manajemen Peminjaman / List Peminjam")
     data = borrow_data_repo.list_non_returned()
+    counter = 1
 
     for d in data:
-        print("isbn {} dipinjam oleh {} pada tanggal {}".format(d.isbn, d.nim, d.start_date))
+        book = book_repo.get(d.isbn)
+        mhs = mahasiswa_repo.get(d.nim)
+        print("{}. Buku:\t\t{} ({})".format(counter, book.nama, book.isbn))
+        print("   Mahasiswa:\t\t{} ({})".format(mhs.nama, mhs.nim))
+        print("   Tanggal Pinjam:\t{}".format(d.start_date))
         print()
+        counter += 1
 
     print("Menu:")
     print("1. Kembali")
