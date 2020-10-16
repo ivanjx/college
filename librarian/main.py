@@ -51,7 +51,7 @@ def print_list_buku():
 
 def list_buku():
     clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Buku - List Buku")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Buku / List Buku")
     print_list_buku()
 
     print("Menu:")
@@ -67,7 +67,7 @@ def list_buku():
 
 def tambah_buku():
     clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Buku - Tambah Buku")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Buku / Tambah Buku")
     
     try:
         b = book()
@@ -95,7 +95,7 @@ def tambah_buku():
 
 def edit_buku():
     clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Buku - Edit Buku")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Buku / Edit Buku")
     print("Daftar buku:")
     books = print_list_buku()
 
@@ -139,7 +139,7 @@ def edit_buku():
 
 def hapus_buku():
     clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Buku - Hapus Buku")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Buku / Hapus Buku")
     print("Daftar buku:")
     books = print_list_buku()
 
@@ -172,7 +172,7 @@ def hapus_buku():
 
 def book_menu():
     clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Buku")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Buku")
     print("Menu:")
     print("1. List buku")
     print("2. Tambah buku")
@@ -212,7 +212,7 @@ def print_list_mhs():
 
 def list_mhs():
     clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Mahasiswa - List Mahasiswa")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Mahasiswa / List Mahasiswa")
     print_list_mhs()
 
     print("Menu:")
@@ -228,7 +228,7 @@ def list_mhs():
 
 def tambah_mhs():
     clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Mahasiswa - Tambah Mahasiswa")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Mahasiswa / Tambah Mahasiswa")
     
     try:
         m = mahasiswa()
@@ -254,7 +254,7 @@ def tambah_mhs():
 
 def edit_mhs():
     clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Mahasiswa - Edit Mahasiswa")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Mahasiswa / Edit Mahasiswa")
     print("Daftar mahasiswa:")
     mhs = print_list_mhs()
 
@@ -292,7 +292,7 @@ def edit_mhs():
 
 def hapus_mhs():
     clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Mahasiswa - Hapus Mahasiswa")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Mahasiswa / Hapus Mahasiswa")
     print("Daftar mahasiswa:")
     mhs = print_list_mhs()
 
@@ -325,7 +325,7 @@ def hapus_mhs():
 
 def mhs_menu():
     clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Mahasiswa")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Mahasiswa")
     print("Menu:")
     print("1. List mahasiswa")
     print("2. Tambah mahasiswa")
@@ -351,7 +351,7 @@ def mhs_menu():
 
 def borrow_menu():
     clear()
-    print("Aplikasi Perpustakaan ISTN - Manajemen Peminjaman")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Peminjaman")
     print("Menu:")
     print("1. List peminjam")
     print("2. List buku yang dipinjam")
