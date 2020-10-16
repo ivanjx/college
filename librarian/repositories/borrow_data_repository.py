@@ -66,11 +66,14 @@ class borrow_data_repository:
 
 
     def get(self, nim, isbn):
+        result = None
+
         for data in self.borrow_data_list:
             if data.nim == nim and data.isbn == isbn:
-                return data
+                # Get the last entry.
+                result = data
 
-        return None
+        return result
 
 
     def list_non_returned(self):
