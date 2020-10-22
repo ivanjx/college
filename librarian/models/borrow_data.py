@@ -7,3 +7,9 @@ class borrow_data:
         self.start_date = datetime.now()
         self.is_returned = False
         self.return_date = datetime.now()
+
+    def get_borrow_days(self):
+        if self.is_returned:
+            return self.return_date - self.start_date
+        else:
+            return (datetime.now() - self.start_date).days
