@@ -23,6 +23,10 @@ def clear():
         system("clear")
 
 
+def format_debt(debt):
+    return "Rp. {:,},00".format(debt).replace(",", ".")
+
+
 def input_choice():
     s = input("Pilihan: ")
     
@@ -357,7 +361,7 @@ def mhs_menu():
 
 def list_peminjaman():
     clear()
-    print("Aplikasi Perpustakaan ISTN / Manajemen Peminjaman / List Peminjam")
+    print("Aplikasi Perpustakaan ISTN / Manajemen Peminjaman / List Peminjaman")
     data = borrow_data_repo.list_non_returned()
     counter = 1
 
@@ -367,6 +371,13 @@ def list_peminjaman():
         print("{}. Buku:\t\t{} ({})".format(counter, book.nama, book.isbn))
         print("   Mahasiswa:\t\t{} ({})".format(mhs.nama, mhs.nim))
         print("   Tanggal Pinjam:\t{}".format(d.start_date))
+
+        debt = borrow_svc.calculate_debt(d)
+
+        if debt > 0:
+            print("   Terlambat:\t\t{} hari".format(d.get_borrow_days()))
+            print("   Denda:\t\t{}".format(format_debt(debt)))
+
         print()
         counter += 1
 
@@ -523,6 +534,7 @@ def cek_status_peminjaman():
         if bd == None:
             raise Exception("data peminjaman tidak ditemukan")
 
+        # Print current status.
         status = "SEDANG DIPINJAM"
 
         if bd.is_returned:
@@ -533,6 +545,13 @@ def cek_status_peminjaman():
 
         if bd.is_returned:
             print("Tanggal:", bd.return_date)
+
+        # Print debt status if any.
+        debt = borrow_svc.calculate_debt(bd)
+
+        if debt > 0:
+            print("Terlambat: {} hari".format(bd.get_borrow_days()))
+            print("Denda: {}".format(format_debt(debt)))
     except Exception as e:
         print("Error:", e)
 
