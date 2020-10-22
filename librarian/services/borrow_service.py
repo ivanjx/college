@@ -2,8 +2,8 @@ from datetime import datetime
 from models.borrow_data import borrow_data
 
 class borrow_service:
-    MAX_BORROW_DAYS = 7
-    DEBT_PER_DAY = 3000
+    MAX_BORROW_DAYS = 3
+    LATE_FEE_PER_DAY = 3000
 
     def __init__(self, book_repo, mhs_repo, borrow_repo):
         self.book_repo = book_repo
@@ -71,17 +71,17 @@ class borrow_service:
         self.book_repo.add_qty_1(isbn)
 
 
-    def calculate_debt(self, data):
+    def calculate_late_fee(self, data):
         # Getting borrow data.
         if not data:
             raise Exception("data is null")
 
-        # Calculating debt.
+        # Calculating late_fee.
         borrow_days = data.get_borrow_days()
-        debt = 0
+        late_fee = 0
 
         if borrow_days > borrow_service.MAX_BORROW_DAYS:
-            debt = borrow_service.DEBT_PER_DAY * data.get_borrow_days()
-        # else no debt.
+            late_fee = borrow_service.LATE_FEE_PER_DAY * data.get_borrow_days()
+        # else no late_fee.
 
-        return debt
+        return late_fee
