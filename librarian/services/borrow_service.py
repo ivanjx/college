@@ -2,6 +2,9 @@ from datetime import datetime
 from models.borrow_data import borrow_data
 
 class borrow_service:
+    MAX_BORROW_DAYS = 7
+    DEBT_PER_DAY = 3000
+
     def __init__(self, book_repo, mhs_repo, borrow_repo):
         self.book_repo = book_repo
         self.mhs_repo = mhs_repo
@@ -66,3 +69,21 @@ class borrow_service:
 
         # Adding qty.
         self.book_repo.add_qty_1(isbn)
+
+
+    def calculate_debt(self, nim, isbn):
+        # Getting borrow data.
+        data = self.borrow_repo.get(nim, isbn)
+
+        if not data:
+            raise Exception("data peminjaman tidak ditemukan")
+
+        # Calculating debt.
+        borrow_days = data.get_borrow_days()
+        debt = 0
+
+        if borrow_days > borrow_service.MAX_BORROW_DAYS:
+            debt = borrow_service.DEBT_PER_DAY * data.get_borrow_days()
+        # else no debt.
+
+        return debt
