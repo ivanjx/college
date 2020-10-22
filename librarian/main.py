@@ -27,6 +27,10 @@ def format_late_fee(late_fee):
     return "Rp. {:,},00".format(late_fee).replace(",", ".")
 
 
+def format_date(date):
+    return date.strftime("%d %b %Y %H:%M:%S")
+
+
 def input_choice():
     s = input("Pilihan: ")
     
@@ -370,7 +374,7 @@ def list_peminjaman():
         mhs = mahasiswa_repo.get(d.nim)
         print("{}. Buku:\t\t{} ({})".format(counter, book.nama, book.isbn))
         print("   Mahasiswa:\t\t{} ({})".format(mhs.nama, mhs.nim))
-        print("   Tanggal Pinjam:\t{}".format(d.start_date))
+        print("   Tanggal Pinjam:\t{}".format(format_date(d.start_date)))
 
         late_fee = borrow_svc.calculate_late_fee(d)
 
@@ -542,9 +546,10 @@ def cek_status_peminjaman():
 
         print()
         print("Status:", status)
+        print("Tanggal pinjam:", format_date(bd.start_date))
 
         if bd.is_returned:
-            print("Tanggal:", bd.return_date)
+            print("Tanggal kembali:", format_date(bd.return_date))
 
         # Print late_fee status if any.
         late_fee = borrow_svc.calculate_late_fee(bd)
