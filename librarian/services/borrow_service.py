@@ -71,12 +71,10 @@ class borrow_service:
         self.book_repo.add_qty_1(isbn)
 
 
-    def calculate_debt(self, nim, isbn):
+    def calculate_debt(self, data):
         # Getting borrow data.
-        data = self.borrow_repo.get(nim, isbn)
-
         if not data:
-            raise Exception("data peminjaman tidak ditemukan")
+            raise Exception("data is null")
 
         # Calculating debt.
         borrow_days = data.get_borrow_days()
