@@ -2,7 +2,7 @@ from datetime import datetime
 from models.borrow_data import borrow_data
 
 class borrow_service:
-    MAX_BORROW_DAYS = 3
+    MAX_BORROW_DAYS = 7
     LATE_FEE_PER_DAY = 3000
 
     def __init__(self, book_repo, mhs_repo, borrow_repo):
