@@ -12,7 +12,8 @@ javac -classpath \
   src/logic/models/BookCategory.java \
   src/logic/models/Book.java \
   src/logic/models/Customer.java \
-  src/logic/models/Order.java
+  src/logic/models/Order.java \
+  src/logic/repositories/DB.java
   
 cp -R src/* bin
 find ./bin -type f -name '*.java' -exec rm {} +
