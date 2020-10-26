@@ -47,4 +47,31 @@ public class BookCategoryRepository implements IBookCategoryRepository
         return null;
     }
 
+    @Override
+    public void update(BookCategory data) 
+    throws SQLException, Exception
+    {
+        DB db = new DB();
+        PreparedStatement statement = db.prepareStatement(
+            "update tblKategori set name = ? where id = ?");
+        statement.setString(1, data.getName());
+        statement.setInt(2, data.getId());
+        int count = statement.executeUpdate();
+
+        if (count != 1)
+        {
+            throw new Exception("Unable to update data");
+        }
+    }
+
+    @Override
+    public void delete(int id) 
+    throws SQLException 
+    {
+        DB db = new DB();
+        PreparedStatement statement = db.prepareStatement("delete from tblKategori where id = ?");
+        statement.setInt(1, id);
+        statement.executeUpdate();
+    }
+
 }
