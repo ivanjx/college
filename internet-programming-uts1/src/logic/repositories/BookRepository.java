@@ -9,6 +9,36 @@ public class BookRepository implements IBookRepository
 {
 
     @Override
+    public Book create(Book data)
+    throws SQLException, Exception
+    {
+        DB db = new DB();
+        PreparedStatement statement = db.prepareStatementReturn(
+            "insert into tblBuku(catId, judul, penulis, harga, gambar) " +
+            "values(?,?,?,?,?)");
+        statement.setInt(1, data.getCatId());
+        statement.setString(2, data.getTitle());
+        statement.setString(3, data.getWriter());
+        statement.setDouble(4, data.getPrice());
+        statement.setString(5, data.getImgPath());
+        int count = statement.executeUpdate();
+
+        if (count != 1)
+        {
+            throw new Exception("Unable to insert data");
+        }
+
+        ResultSet rs = statement.getGeneratedKeys();
+
+        if (rs.next())
+        {
+            return get(rs.getInt(1));
+        }
+
+        throw new Exception("Unable to insert data");
+    }
+
+    @Override
     public Book[] list() 
     throws SQLException 
     {
@@ -61,12 +91,13 @@ public class BookRepository implements IBookRepository
     {
         DB db = new DB();
         PreparedStatement statement = db.prepareStatement(
-            "update tblBuku set judul = ?, penulis = ?, harga = ?, gambar = ? where id = ?");
-        statement.setString(1, data.getTitle());
-        statement.setString(2, data.getWriter());
-        statement.setDouble(3, data.getPrice());
-        statement.setString(4, data.getImgPath());
-        statement.setInt(5, data.getId());
+            "update tblBuku set catId = ?, judul = ?, penulis = ?, harga = ?, gambar = ? where id = ?");
+        statement.setInt(1, data.getCatId());
+        statement.setString(2, data.getTitle());
+        statement.setString(3, data.getWriter());
+        statement.setDouble(4, data.getPrice());
+        statement.setString(5, data.getImgPath());
+        statement.setInt(6, data.getId());
         int count = statement.executeUpdate();
 
         if (count != 1)

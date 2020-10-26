@@ -35,4 +35,11 @@ public class DB
         init();
         return _conn.prepareStatement(q);
     }
+
+    public PreparedStatement prepareStatementReturn(String q)
+    throws SQLException
+    {
+        init();
+        return _conn.prepareStatement(q, Statement.RETURN_GENERATED_KEYS);
+    }
 }
