@@ -19,4 +19,5 @@ echo Packaging
 cd bin
 jar cvf build.war .
 mv build.war ../internet-programming-uts1.war
+cd ..
 rm -rf bin
