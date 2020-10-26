@@ -8,6 +8,31 @@ public class BookCategoryRepository implements IBookCategoryRepository
 {
 
     @Override
+    public BookCategory create(BookCategory data)
+    throws SQLException, Exception
+    {
+        DB db = new DB();
+        PreparedStatement statement = db.prepareStatementReturn(
+            "insert into tblKategori(nama) values (?)");
+        statement.setString(1, data.getName());
+        int count = statement.executeUpdate();
+
+        if (count == 0)
+        {
+            throw new Exception("Unable to insert data");
+        }
+
+        ResultSet rs = statement.getGeneratedKeys();
+
+        if (rs.next())
+        {
+            return get(rs.getInt(1));
+        }
+
+        throw new Exception("Unable to insert data");
+    }
+
+    @Override
     public BookCategory[] list() 
     throws SQLException
     {
