@@ -53,7 +53,7 @@ public class BookCategoryRepository implements IBookCategoryRepository
     {
         DB db = new DB();
         PreparedStatement statement = db.prepareStatement(
-            "update tblKategori set name = ? where id = ?");
+            "update tblKategori set nama = ? where id = ?");
         statement.setString(1, data.getName());
         statement.setInt(2, data.getId());
         int count = statement.executeUpdate();
