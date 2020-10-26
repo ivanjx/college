@@ -13,7 +13,7 @@ public class BookCategoryRepository implements IBookCategoryRepository
     {
         DB db = new DB();
         Statement statement = db.getStatement();
-        ResultSet rs = statement.executeQuery("select * from tblBuku");
+        ResultSet rs = statement.executeQuery("select * from tblKategori");
         List<BookCategory> result = new ArrayList<BookCategory>();
         
         while (rs.next())
@@ -32,7 +32,7 @@ public class BookCategoryRepository implements IBookCategoryRepository
     throws SQLException 
     {
         DB db = new DB();
-        PreparedStatement statement = db.prepareStatement("select * from tblBuku where id = ?");
+        PreparedStatement statement = db.prepareStatement("select * from tblKategori where id = ?");
         statement.setInt(1, id);
         ResultSet rs = statement.executeQuery();
 
