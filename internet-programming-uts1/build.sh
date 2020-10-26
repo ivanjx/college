@@ -10,7 +10,8 @@ javac -classpath \
   -d bin/WEB-INF/classes \
   src/WEB-INF/MainServlet.java \
   src/logic/models/BookCategory.java \
-  src/logic/models/Book.java
+  src/logic/models/Book.java \
+  src/logic/models/Customer.java
   
 cp -R src/* bin
 find ./bin -type f -name '*.java' -exec rm {} +
