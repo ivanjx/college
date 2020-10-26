@@ -4,7 +4,7 @@ import javax.servlet.http.*;
 
 public class MainServlet extends HttpServlet
 {
-	// GET /
+	// GET /main
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	throws 
 	ServletException,
@@ -14,7 +14,7 @@ public class MainServlet extends HttpServlet
 
 		// Body.
 		PrintWriter out = response.getWriter();
-		out.println("{\"message\": \"Hello world!\"}");
+		out.println("{\"message\": \"Hello world\"}");
 
 		// Done.
 		out.close();
