@@ -8,13 +8,31 @@ public class DB
     static final String DB_USER = "root";
     static final String DB_PASS = "";
 
+    static Connection _conn;
+
+    void init()
+    throws SQLException
+    {
+        if (_conn == null)
+        {
+            _conn = DriverManager.getConnection(
+                CONN_STR, 
+                DB_USER, 
+                DB_PASS);
+        }
+    }
+
     public Statement getStatement()
     throws SQLException
     {
-        Connection conn = DriverManager.getConnection(
-            CONN_STR, 
-            DB_USER, 
-            DB_PASS);
-        return conn.createStatement();
+        init();        
+        return _conn.createStatement();
+    }
+
+    public PreparedStatement prepareStatement(String q)
+    throws SQLException
+    {
+        init();
+        return _conn.prepareStatement(q);
     }
 }
