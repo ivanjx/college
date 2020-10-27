@@ -14,7 +14,7 @@ public class BookCategoryRepository implements IBookCategoryRepository
         DB db = new DB();
         PreparedStatement statement = db.prepareStatementReturn(
             "insert into tblKategori(nama) values (?)");
-        statement.setString(1, data.getName());
+        statement.setString(1, data.name);
         int count = statement.executeUpdate();
 
         if (count == 0)
@@ -44,8 +44,8 @@ public class BookCategoryRepository implements IBookCategoryRepository
         while (rs.next())
         {
             BookCategory cat = new BookCategory();
-            cat.setId(rs.getInt(1));
-            cat.setName(rs.getString(2));
+            cat.id = rs.getInt(1);
+            cat.name = rs.getString(2);
             result.add(cat);
         }
 
@@ -64,8 +64,8 @@ public class BookCategoryRepository implements IBookCategoryRepository
         if (rs.next())
         {
             BookCategory cat = new BookCategory();
-            cat.setId(rs.getInt(1));
-            cat.setName(rs.getString(2));
+            cat.id = rs.getInt(1);
+            cat.name = rs.getString(2);
             return cat;
         }
 
@@ -79,8 +79,8 @@ public class BookCategoryRepository implements IBookCategoryRepository
         DB db = new DB();
         PreparedStatement statement = db.prepareStatement(
             "update tblKategori set nama = ? where id = ?");
-        statement.setString(1, data.getName());
-        statement.setInt(2, data.getId());
+        statement.setString(1, data.name);
+        statement.setInt(2, data.id);
         int count = statement.executeUpdate();
 
         if (count != 1)

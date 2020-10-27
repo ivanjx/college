@@ -16,11 +16,11 @@ public class BookRepository implements IBookRepository
         PreparedStatement statement = db.prepareStatementReturn(
             "insert into tblBuku(catId, judul, penulis, harga, gambar) " +
             "values(?,?,?,?,?)");
-        statement.setInt(1, data.getCatId());
-        statement.setString(2, data.getTitle());
-        statement.setString(3, data.getWriter());
-        statement.setDouble(4, data.getPrice());
-        statement.setString(5, data.getImgPath());
+        statement.setInt(1, data.id);
+        statement.setString(2, data.title);
+        statement.setString(3, data.writer);
+        statement.setDouble(4, data.price);
+        statement.setString(5, data.imgPath);
         int count = statement.executeUpdate();
 
         if (count != 1)
@@ -49,12 +49,12 @@ public class BookRepository implements IBookRepository
         while (rs.next())
         {
             Book book = new Book();
-            book.setId(rs.getInt(1));
-            book.setCatId(rs.getInt(2));
-            book.setTitle(rs.getString(3));
-            book.setWriter(rs.getString(4));
-            book.setPrice(rs.getDouble(5));
-            book.setImgPath(rs.getString(6));
+            book.id = rs.getInt(1);
+            book.catId = rs.getInt(2);
+            book.title = rs.getString(3);
+            book.writer = rs.getString(4);
+            book.price = rs.getDouble(5);
+            book.imgPath = rs.getString(6);
             result.add(book);
         }
 
@@ -73,12 +73,12 @@ public class BookRepository implements IBookRepository
         if (rs.next())
         {
             Book book = new Book();
-            book.setId(rs.getInt(1));
-            book.setCatId(rs.getInt(2));
-            book.setTitle(rs.getString(3));
-            book.setWriter(rs.getString(4));
-            book.setPrice(rs.getDouble(5));
-            book.setImgPath(rs.getString(6));
+            book.id = rs.getInt(1);
+            book.catId = rs.getInt(2);
+            book.title = rs.getString(3);
+            book.writer = rs.getString(4);
+            book.price = rs.getDouble(5);
+            book.imgPath = rs.getString(6);
             return book;
         }
 
@@ -92,12 +92,12 @@ public class BookRepository implements IBookRepository
         DB db = new DB();
         PreparedStatement statement = db.prepareStatement(
             "update tblBuku set catId = ?, judul = ?, penulis = ?, harga = ?, gambar = ? where id = ?");
-        statement.setInt(1, data.getCatId());
-        statement.setString(2, data.getTitle());
-        statement.setString(3, data.getWriter());
-        statement.setDouble(4, data.getPrice());
-        statement.setString(5, data.getImgPath());
-        statement.setInt(6, data.getId());
+        statement.setInt(1, data.catId);
+        statement.setString(2, data.title);
+        statement.setString(3, data.writer);
+        statement.setDouble(4, data.price);
+        statement.setString(5, data.imgPath);
+        statement.setInt(6, data.id);
         int count = statement.executeUpdate();
 
         if (count != 1)
