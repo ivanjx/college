@@ -1,11 +1,8 @@
 <html>
     <head>
-        <title>JSP Test Page</title>
+        <title>Toko Buku Ivan</title>
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <%
-            String hello = "This is an index JSP page!";
-        %>
-        <h1><%=hello%></h1>
     </body>
 </html>
