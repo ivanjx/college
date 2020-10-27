@@ -16,7 +16,7 @@ public class BookRepository implements IBookRepository
         PreparedStatement statement = db.prepareStatementReturn(
             "insert into tblBuku(catId, judul, penulis, harga, gambar) " +
             "values(?,?,?,?,?)");
-        statement.setInt(1, data.id);
+        statement.setInt(1, data.catId);
         statement.setString(2, data.title);
         statement.setString(3, data.writer);
         statement.setDouble(4, data.price);
