@@ -19,7 +19,9 @@ javac -classpath \
   src/logic/repositories/IBookRepository.java \
   src/logic/repositories/BookRepository.java \
   src/logic/repositories/ICustomerRepository.java \
-  src/logic/repositories/CustomerRepository.java
+  src/logic/repositories/CustomerRepository.java \
+  src/logic/repositories/IOrderRepository.java \
+  src/logic/repositories/OrderRepository.java
   
 cp -R src/* bin
 find ./bin -type f -name '*.java' -exec rm {} +
