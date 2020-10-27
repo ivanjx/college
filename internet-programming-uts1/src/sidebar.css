@@ -1,0 +1,22 @@
+#sidebar {
+    display: flex;
+    flex-direction: row;
+}
+
+#sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+#sidebar .menu a {
+    height: auto;
+    border: 0;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+#sidebar .content {
+    display: block;
+    flex-grow: 1;
+}
