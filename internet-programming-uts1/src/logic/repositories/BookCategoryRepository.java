@@ -77,7 +77,7 @@ public class BookCategoryRepository implements IBookCategoryRepository
     throws SQLException, Exception
     {
         DB db = new DB();
-        PreparedStatement statement = db.prepareStatement(
+        PreparedStatement statement = db.prepareStatementReturn(
             "update tblKategori set nama = ? where id = ?");
         statement.setString(1, data.name);
         statement.setInt(2, data.id);

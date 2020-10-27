@@ -90,7 +90,7 @@ public class BookRepository implements IBookRepository
     throws SQLException, Exception 
     {
         DB db = new DB();
-        PreparedStatement statement = db.prepareStatement(
+        PreparedStatement statement = db.prepareStatementReturn(
             "update tblBuku set catId = ?, judul = ?, penulis = ?, harga = ?, gambar = ? where id = ?");
         statement.setInt(1, data.catId);
         statement.setString(2, data.title);
