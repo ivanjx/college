@@ -5,8 +5,8 @@ mkdir bin/WEB-INF/classes
 mkdir bin/WEB-INF/lib
 
 echo Compiling
-javac -classpath \
-  ".:lib/servlet.jar:lib/jdbc.jar" \
+javac \
+  -classpath "./lib" \
   -d bin/WEB-INF/classes \
   src/logic/models/BookCategory.java \
   src/logic/models/Book.java \
