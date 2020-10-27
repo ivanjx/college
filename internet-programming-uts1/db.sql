@@ -20,8 +20,8 @@ create table tblBuku (
 create table tblPembeli(
     id int not null auto_increment,
     nama varchar(60) not null,
-    alamat varchar(100) not null,
-    telp varchar(20) not null,
+    alamat varchar(100),
+    telp varchar(20),
     primary key(id)
 );
 
