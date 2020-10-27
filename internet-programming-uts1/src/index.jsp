@@ -1,12 +1,11 @@
 <html>
     <%@include file='header.jsp'%>
-    <link rel="stylesheet" href="index.css">
 
     <body>
         <div id="sidebar">
             <%@include file='sidebar-menu.jsp'%>
 
-            <div class="content">
+            <div class="content content-index">
                 <h3>Selamat Datang</h3>
                 <br/>
 
