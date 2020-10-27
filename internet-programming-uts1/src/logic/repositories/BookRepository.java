@@ -14,7 +14,7 @@ public class BookRepository implements IBookRepository
     {
         DB db = new DB();
         PreparedStatement statement = db.prepareStatementReturn(
-            "insert into tblBuku(catId, judul, penulis, harga, gambar) " +
+            "insert into tblBuku(idKategori, judul, penulis, harga, gambar) " +
             "values(?,?,?,?,?)");
         statement.setInt(1, data.catId);
         statement.setString(2, data.title);
@@ -91,7 +91,7 @@ public class BookRepository implements IBookRepository
     {
         DB db = new DB();
         PreparedStatement statement = db.prepareStatementReturn(
-            "update tblBuku set catId = ?, judul = ?, penulis = ?, harga = ?, gambar = ? where id = ?");
+            "update tblBuku set idKategori = ?, judul = ?, penulis = ?, harga = ?, gambar = ? where id = ?");
         statement.setInt(1, data.catId);
         statement.setString(2, data.title);
         statement.setString(3, data.writer);

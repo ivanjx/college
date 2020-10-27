@@ -18,7 +18,7 @@ public class OrderRepository implements IOrderRepository
     {
         DB db = new DB();
         PreparedStatement statement = db.prepareStatementReturn(
-            "insert into tblPesan(custId, bookId, jumlah, tanggal) " +
+            "insert into tblPesan(idPembeli, idBuku, jumlah, tanggal) " +
             "values(?,?,?,?)");
         statement.setInt(1, data.custId);
         statement.setInt(2, data.bookId);
