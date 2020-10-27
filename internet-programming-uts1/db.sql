@@ -12,7 +12,7 @@ create table tblBuku (
     judul varchar(100) not null,
     penulis varchar(100) not null,
     harga double not null,
-    gambar varchar(200) not null,
+    gambar varchar(200),
     primary key(id),
     foreign key(idKategori) references tblKategori(id)
 );
