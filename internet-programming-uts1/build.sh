@@ -23,7 +23,8 @@ javac \
   src/logic/repositories/OrderRepository.java \
   src/logic/services/BookCategoryService.java \
   src/logic/services/BookService.java \
-  src/logic/services/CustomerService.java
+  src/logic/services/CustomerService.java \
+  src/logic/services/OrderService.java
   
 cp -R src/* bin
 rm -rf bin/logic
