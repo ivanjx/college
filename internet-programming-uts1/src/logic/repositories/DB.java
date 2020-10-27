@@ -5,8 +5,8 @@ import java.sql.*;
 public class DB 
 {
     static final String CONN_STR = "jdbc:mysql://localhost:3306/dbinternetprogramminguts1";
-    static final String DB_USER = "root";
-    static final String DB_PASS = "";
+    static final String DB_USER = "internetprogramminguts1";
+    static final String DB_PASS = "internetprogramminguts1";
 
     static Connection _conn;
 
