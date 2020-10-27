@@ -22,7 +22,8 @@ javac -classpath \
   src/logic/repositories/IOrderRepository.java \
   src/logic/repositories/OrderRepository.java \
   src/logic/services/BookCategoryService.java \
-  src/logic/services/BookService.java
+  src/logic/services/BookService.java \
+  src/logic/services/CustomerService.java
   
 cp -R src/* bin
 find ./bin -type f -name '*.java' -exec rm {} +
