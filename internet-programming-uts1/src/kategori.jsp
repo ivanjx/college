@@ -6,7 +6,7 @@
             <%@include file='sidebar-menu.jsp'%>
 
             <div class="content content-kategori">
-                <h1>Buku</h1>
+                <h1>Kategori Buku</h1>
 
                 <button class="btn btn-primary add">
                     Add
