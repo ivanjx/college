@@ -7,5 +7,5 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="kategori.css">
+    <link rel="stylesheet" href="buku.css">
 </head>
