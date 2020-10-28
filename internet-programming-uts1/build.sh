@@ -25,8 +25,8 @@ javac \
   src/logic/services/BookService.java \
   src/logic/services/CustomerService.java \
   src/logic/services/OrderService.java \
-  src/logic/controllers/HelloServlet.java \
-  src/logic/controllers/KategoriServlet.java
+  src/logic/controllers/hello/Hello.java \
+  src/logic/controllers/hello/Hello2.java
   
 cp -R src/* bin
 rm -rf bin/logic

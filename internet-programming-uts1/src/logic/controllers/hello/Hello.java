@@ -1,10 +1,12 @@
-package logic.controllers;
+package logic.controllers.hello;
 
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import javax.servlet.annotation.WebServlet;
 
-public class HelloServlet extends HttpServlet 
+@WebServlet("/hello")
+public class Hello extends HttpServlet 
 {
     /**
      *

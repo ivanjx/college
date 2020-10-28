@@ -1,17 +1,19 @@
-package logic.controllers;
+package logic.controllers.hello;
 
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import javax.servlet.annotation.WebServlet;
 
-public class KategoriServlet extends HttpServlet 
+@WebServlet("/hello2")
+public class Hello2 extends HttpServlet 
 {
     /**
      *
      */
     private static final long serialVersionUID = 1L;
 
-    // GET /kategori
+    // GET /hello
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	throws 
 	ServletException,
@@ -21,7 +23,7 @@ public class KategoriServlet extends HttpServlet
 
 		// Body.
 		PrintWriter out = response.getWriter();
-		out.println("{\"message\": \"Hello world!\"}");
+		out.println("{\"message\": \"Hello servlet 2!\"}");
 
 		// Done.
 		out.close();
