@@ -16,30 +16,29 @@ public class KategoriCreateServlet extends HttpServlet
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
     throws ServletException, IOException
     {
-        // Validating.
-        String name = request.getParameter("name");
-
-        if (name == null ||
-            name.isEmpty())
-        {
-            response.sendError(400, "name is empty");
-        }
-
-        // Creating.
-        BookCategory cat = new BookCategory();
-        cat.name = name;
-        
         try
         {
+            // Validating.
+            String name = request.getParameter("name");
+
+            if (name == null ||
+                name.isEmpty())
+            {
+                throw new Exception("name is empty");
+            }
+
+            // Creating.
+            BookCategory cat = new BookCategory();
+            cat.name = name;
             DI.bookCategoryService.create(cat);
+
+            // Done.
+            response.sendRedirect("kategori.jsp");
         }
         catch (Exception ex)
         {
             response.sendError(400, ex.getMessage());
         }
-
-        // Done.
-        response.sendRedirect("kategori.jsp");
 	}
 }
 

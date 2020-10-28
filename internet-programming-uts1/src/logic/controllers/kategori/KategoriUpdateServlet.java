@@ -19,30 +19,30 @@ public class KategoriUpdateServlet extends HttpServlet
     public void doPost(HttpServletRequest request, HttpServletResponse response) 
     throws ServletException, IOException
     {
-        // Validating.
-        int id = Integer.parseInt(request.getParameter("id"));
-        String name = request.getParameter("name");
-
-        if (name == null ||
-            name.isEmpty())
-        {
-            response.sendError(400, "name is empty");
-        }
-
-        // Updating.
-        BookCategory cat = new BookCategory();
-        cat.id = id;
-        cat.name = name;
-
         try 
         {
+            // Validating.
+            int id = Integer.parseInt(request.getParameter("id"));
+            String name = request.getParameter("name");
+
+            if (name == null ||
+                name.isEmpty())
+            {
+                throw new Exception("name is empty");
+            }
+
+            // Updating.
+            BookCategory cat = new BookCategory();
+            cat.id = id;
+            cat.name = name;
             DI.bookCategoryService.update(cat);
+
+            // Done.
+            response.sendRedirect("kategori.jsp");
         }
         catch (Exception ex)
         {
             response.sendError(400, ex.getMessage());
         }
-
-        response.sendRedirect("kategori.jsp");
     }
 }
