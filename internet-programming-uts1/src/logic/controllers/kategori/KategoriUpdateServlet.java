@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import logic.DI;
 import logic.models.BookCategory;
 
-@WebServlet("kategori/update")
+@WebServlet("/kategori/update")
 public class KategoriUpdateServlet extends HttpServlet
 {
     private static final long serialVersionUID = 1L;

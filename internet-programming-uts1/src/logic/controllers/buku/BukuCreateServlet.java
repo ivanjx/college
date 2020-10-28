@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import logic.DI;
 import logic.models.Book;
 
-@WebServlet("buku/create")
+@WebServlet("/buku/create")
 public class BukuCreateServlet extends HttpServlet 
 {
     private static final long serialVersionUID = 1L;
