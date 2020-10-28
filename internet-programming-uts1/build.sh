@@ -29,7 +29,8 @@ javac \
   src/logic/controllers/kategori/KategoriCreateServlet.java \
   src/logic/controllers/kategori/KategoriUpdateServlet.java \
   src/logic/controllers/kategori/KategoriDeleteServlet.java \
-  src/logic/controllers/buku/BukuCreateServlet.java
+  src/logic/controllers/buku/BukuCreateServlet.java \
+  src/logic/controllers/buku/BukuUpdateServlet.java
   
 cp -R src/* bin
 rm -rf bin/logic
