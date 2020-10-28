@@ -9,4 +9,5 @@ public interface IBookRepository
     Book get(int id) throws Exception;
     void update(Book data) throws Exception;
     void delete(int id) throws Exception;
+    void deleteByCategory(int id) throws Exception;
 }

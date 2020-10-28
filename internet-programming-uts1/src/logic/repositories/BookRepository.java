@@ -116,4 +116,15 @@ public class BookRepository implements IBookRepository
         statement.executeUpdate();
     }
 
+    @Override
+    public void deleteByCategory(int id) 
+    throws Exception 
+    {
+        DB db = new DB();
+        PreparedStatement statement = db.prepareStatement(
+            "delete from tblBuku where idKategori = ?");
+        statement.setInt(1, id);
+        statement.executeQuery();
+    }
+
 }
