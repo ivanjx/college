@@ -6,7 +6,7 @@ mkdir bin/WEB-INF/lib
 
 echo Compiling
 javac \
-  -classpath "./lib" \
+  -classpath "./lib/servlet.jar:./lib/jdbc.jar" \
   -d bin/WEB-INF/classes \
   src/logic/models/BookCategory.java \
   src/logic/models/Book.java \
@@ -24,7 +24,9 @@ javac \
   src/logic/services/BookCategoryService.java \
   src/logic/services/BookService.java \
   src/logic/services/CustomerService.java \
-  src/logic/services/OrderService.java
+  src/logic/services/OrderService.java \
+  src/logic/controllers/HelloServlet.java \
+  src/logic/controllers/KategoriServlet.java
   
 cp -R src/* bin
 rm -rf bin/logic
