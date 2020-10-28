@@ -88,5 +88,27 @@ public class OrderRepository implements IOrderRepository
         return null;
     }
 
+    @Override
+    public void deleteByBook(int id) 
+    throws Exception 
+    {
+        DB db = new DB();
+        PreparedStatement statement = db.prepareStatement(
+            "delete from tblPesan where idBuku = ?");
+        statement.setInt(1, id);
+        statement.executeQuery();
+    }
+
+    @Override
+    public void deleteByCustomer(int id) 
+    throws Exception 
+    {
+        DB db = new DB();
+        PreparedStatement statement = db.prepareStatement(
+            "delete from tblPesan where idPembeli = ?");
+        statement.setInt(1, id);
+        statement.executeQuery();
+    }
+
     
 }
