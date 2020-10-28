@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/kategori/create")
+@WebServlet("kategori/create")
 public class KategoriCreateServlet extends HttpServlet 
 {
     private static final long serialVersionUID = 1L;
