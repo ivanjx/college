@@ -1,3 +1,9 @@
+<%@page import="logic.models.*"%>
+<%@page import="logic.repositories.*"%>
+<%@page import="logic.services.*"%>
+<%@page import="logic.controllers.*"%>
+<%@page import="logic.*"%>
+
 <html>
     <%@include file='header.jsp'%>
     
@@ -8,9 +14,9 @@
             <div class="content content-kategori">
                 <h1>Kategori Buku</h1>
 
-                <button class="btn btn-primary add">
-                    Add
-                </button>
+                <a class="btn btn-primary add" href="createkategori.jsp">
+                    Tambah
+                </a>
 
                 <table class="table table-striped">
                     <thead class="table table-dark">
@@ -20,27 +26,24 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <%
+                        BookCategory[] cats = DI.bookCategoryRepository.list();
+                        
+                        for (int i = 0; i < cats.length; ++i)
+                        {
+                        %>
+
                         <tr>
-                            <td>Sains</td>
+                            <td><%= cats[i].name %></td>
                             <td class="action-col-data">
                                 <button class="btn"><i class="fas fa-edit"></i></button>
                                 <button class="btn"><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Fiksi</td>
-                            <td class="action-col-data">
-                                <button class="btn"><i class="fas fa-edit"></i></button>
-                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Religi</td>
-                            <td class="action-col-data">
-                                <button class="btn"><i class="fas fa-edit"></i></button>
-                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
+
+                        <%
+                        }
+                        %>
                     </tbody>
                 </table>
             </div>
