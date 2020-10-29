@@ -22,6 +22,7 @@ public class BukuUpdateServlet extends HttpServlet
         try
         {
             // Validating.
+            int id = Integer.parseInt(request.getParameter("id"));
             int catId = Integer.parseInt(request.getParameter("catId"));
             String title = request.getParameter("title");
             String writer = request.getParameter("writer");
@@ -45,6 +46,7 @@ public class BukuUpdateServlet extends HttpServlet
 
             // Updating.
             Book book = new Book();
+            book.id = id;
             book.catId = catId;
             book.title = title;
             book.writer = writer;
