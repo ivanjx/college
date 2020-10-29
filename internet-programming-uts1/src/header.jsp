@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="updatekategori.css">
     <link rel="stylesheet" href="buku.css">
     <link rel="stylesheet" href="createbuku.css">
+    <link rel="stylesheet" href="updatebuku.css">
     <link rel="stylesheet" href="pembeli.css">
     <link rel="stylesheet" href="pesanan.css">
 </head>
