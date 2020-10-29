@@ -1,4 +1,8 @@
+create user internetprogramminguts1 identified by 'internetprogramminguts1';
+drop database if exists dbinternetprogramminguts1;
 create database dbinternetprogramminguts1;
+use dbinternetprogramminguts1;
+grant all on dbinternetprogramminguts1.* to internetprogramminguts1;
 
 create table tblKategori ( 
     id int not null auto_increment, 
