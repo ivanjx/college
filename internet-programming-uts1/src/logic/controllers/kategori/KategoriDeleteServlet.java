@@ -23,7 +23,7 @@ public class KategoriDeleteServlet extends HttpServlet
             int id = Integer.parseInt(request.getParameter("id"));
 
             // Deleting.
-            DI.bookCategoryRepository.delete(id);
+            DI.bookCategoryService.delete(id);
 
             // Done.
             response.sendRedirect("kategori.jsp");
