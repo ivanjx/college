@@ -23,9 +23,10 @@
                 <form action="kategori/update" method="POST">
                     <div class="form-group">
                         <input type="hidden" name="id" value="<%= cat.id %>">
-                        <input type="text" name="name" placeholder="Nama Kategori" value="<%= cat.name %>">
-                        <input type="submit" value="Simpan" class="btn btn-primary">
+                        <input type="text" name="name" placeholder="Nama Kategori" value="<%= cat.name %>" class="form-control">
                     </div>
+
+                    <input type="submit" value="Simpan" class="btn btn-primary">
                 </form>
             </div>
         </div>

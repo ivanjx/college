@@ -17,9 +17,11 @@
 
                 <form action="kategori/create" method="POST">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Nama Kategori">
-                        <input type="submit" value="Simpan" class="btn btn-primary">
+                        <input type="text" name="name" placeholder="Nama Kategori" class="form-control">
                     </div>
+
+                    
+                    <input type="submit" value="Simpan" class="btn btn-primary">
                 </form>
             </div>
         </div>
