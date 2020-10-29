@@ -3,12 +3,14 @@ package logic.controllers.buku;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import logic.DI;
 
+@WebServlet("/buku/delete")
 public class BukuDeleteServlet extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
