@@ -40,6 +40,7 @@
                             <td>Alamat</td>
                             <td class="center-col">Jumlah</td>
                             <td class="center-col">Total</td>
+                            <td class="action-col">Action</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,6 +60,19 @@
                             <td><%= cust.address %></td>
                             <td class="center-col"><%= orders[i].amount %></td>
                             <td class="center-col"><%= Helper.formatPrice(totalPrice) %></td>
+                            <td class="action-col-data">
+                                <a 
+                                    class="btn"
+                                    href="updatepesanan.jsp?id=<%= orders[i].id %>">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a 
+                                    class="btn"
+                                    onclick="return confirm('Yakin ingin menghapus pesanan <%= book.title %> atas nama <%= cust.name %> ?')"
+                                    href="pesanan/delete?id=<%= orders[i].id %>">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>
                         </tr>
 
                         <%
