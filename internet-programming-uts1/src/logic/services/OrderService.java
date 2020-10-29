@@ -25,10 +25,9 @@ public class OrderService
         _custRepo = custRepo;
     }
 
-    public Order create(Order data)
+    void validate(Order data)
     throws Exception
     {
-        // Validating.
         if (data == null)
         {
             throw new Exception("data is null");
@@ -52,10 +51,28 @@ public class OrderService
         {
             throw new Exception("invalid amount");
         }
+    }
 
+    public Order create(Order data)
+    throws Exception
+    {
+        // Validating.
+        validate(data);
+
+        // Setting date.
         data.date = new Date(System.currentTimeMillis());
 
         // Creating.
         return _orderRepo.create(data);
+    }
+
+    public void update(Order data)
+    throws Exception
+    {
+        // Validating.
+        validate(data);
+
+        // Updating.
+        _orderRepo.update(data);
     }
 }
