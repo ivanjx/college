@@ -20,7 +20,7 @@ public class Helper
 
     public static String formatDate(Date date)
     {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         return formatter.format(date);
     }
 }
