@@ -110,5 +110,16 @@ public class OrderRepository implements IOrderRepository
         statement.executeQuery();
     }
 
+    @Override
+    public void deleteByBookCategory(int id)
+    throws Exception
+    {
+        DB db = new DB();
+        PreparedStatement statement = db.prepareStatement(
+            "delete from tblPesan where idBuku in (select id from tblBuku where idKategori = ?)");
+        statement.setInt(1, id);
+        statement.executeQuery();
+    }
+
     
 }

@@ -26,7 +26,8 @@ public class DI
         // Services.
         bookCategoryService = new BookCategoryService(
             bookCategoryRepository,
-            bookRepository);
+            bookRepository,
+            orderRepository);
         bookService = new BookService(
             bookRepository, 
             bookCategoryRepository,

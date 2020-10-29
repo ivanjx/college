@@ -3,18 +3,22 @@ package logic.services;
 import logic.models.BookCategory;
 import logic.repositories.IBookCategoryRepository;
 import logic.repositories.IBookRepository;
+import logic.repositories.IOrderRepository;
 
 public class BookCategoryService 
 {
     IBookCategoryRepository _catRepo;
     IBookRepository _bookRepo;
+    IOrderRepository _orderRepo;
 
     public BookCategoryService(
         IBookCategoryRepository catRepo,
-        IBookRepository bookRepo)
+        IBookRepository bookRepo,
+        IOrderRepository orderRepo)
     {
         _catRepo = catRepo;
         _bookRepo = bookRepo;
+        _orderRepo = orderRepo;
     }
 
     void validate(BookCategory data)
@@ -55,6 +59,9 @@ public class BookCategoryService
     public void delete(int id)
     throws Exception
     {
+        // Deleting orders.
+        _orderRepo.deleteByBookCategory(id);
+
         // Deleting books.
         _bookRepo.deleteByCategory(id);
 

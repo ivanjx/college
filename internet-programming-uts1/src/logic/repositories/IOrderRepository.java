@@ -8,5 +8,6 @@ public interface IOrderRepository
     Order[] list() throws Exception;
     Order get(int id) throws Exception;
     void deleteByBook(int id) throws Exception;
+    void deleteByBookCategory(int id) throws Exception;
     void deleteByCustomer(int id) throws Exception;
 }
