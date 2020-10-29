@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="kategori.css">
     <link rel="stylesheet" href="createkategori.css">
+    <link rel="stylesheet" href="updatekategori.css">
     <link rel="stylesheet" href="buku.css">
     <link rel="stylesheet" href="pembeli.css">
     <link rel="stylesheet" href="pesanan.css">

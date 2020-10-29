@@ -36,7 +36,11 @@
                         <tr>
                             <td><%= cats[i].name %></td>
                             <td class="action-col-data">
-                                <button class="btn"><i class="fas fa-edit"></i></button>
+                                <a 
+                                    class="btn"
+                                    href="updatekategori.jsp?id=<%= cats[i].id %>">
+                                    <i class="fas fa-edit"></i>
+                                </a>
                                 <a 
                                     class="btn" 
                                     href="kategori/delete?id=<%= cats[i].id %>"
