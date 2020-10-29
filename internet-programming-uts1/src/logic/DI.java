@@ -31,7 +31,9 @@ public class DI
             bookRepository, 
             bookCategoryRepository,
             orderRepository);
-        customerService = new CustomerService(customerRepository);
+        customerService = new CustomerService(
+            customerRepository,
+            orderRepository);
         orderService = new OrderService(
             orderRepository, 
             bookRepository, 

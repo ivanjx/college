@@ -2,14 +2,19 @@ package logic.services;
 
 import logic.models.Customer;
 import logic.repositories.ICustomerRepository;
+import logic.repositories.IOrderRepository;
 
 public class CustomerService 
 {
     ICustomerRepository _custRepo;
+    IOrderRepository _orderRepo;
 
-    public CustomerService(ICustomerRepository custRepo)
+    public CustomerService(
+        ICustomerRepository custRepo,
+        IOrderRepository orderRepo)
     {
         _custRepo = custRepo;
+        _orderRepo = orderRepo;
     }
 
     void validate(Customer data)
@@ -45,5 +50,15 @@ public class CustomerService
 
         // Updating.
         _custRepo.update(data);
+    }
+
+    public void delete(int id)
+    throws Exception
+    {
+        // Deleting orders.
+        _orderRepo.deleteByCustomer(id);
+
+        // Deleting customer.
+        _custRepo.delete(id);
     }
 }
