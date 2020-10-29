@@ -26,7 +26,7 @@ public class PembeliDeleteServlet extends HttpServlet
             DI.customerService.delete(id);
 
             // Done.
-            response.sendRedirect("pembeli.jsp");
+            response.sendRedirect(request.getContextPath() + "/pembeli.jsp");
         }
         catch (Exception ex)
         {

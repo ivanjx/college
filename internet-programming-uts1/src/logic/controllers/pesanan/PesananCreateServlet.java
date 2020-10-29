@@ -37,6 +37,9 @@ public class PesananCreateServlet extends HttpServlet
             data.custId = custId;
             data.amount = amount;
             DI.orderService.create(data);
+
+            // Done.
+            response.sendRedirect(request.getContextPath() + "/pesanan.jsp");
         }
         catch (Exception ex)
         {

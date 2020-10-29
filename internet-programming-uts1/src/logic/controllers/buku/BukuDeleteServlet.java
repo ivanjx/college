@@ -26,7 +26,7 @@ public class BukuDeleteServlet extends HttpServlet
             DI.bookService.delete(id);
 
             // Done.
-            response.sendRedirect("buku.jsp");
+            response.sendRedirect(request.getContextPath() + "/buku.jsp");
         }
         catch (Exception ex)
         {

@@ -33,7 +33,7 @@ public class KategoriCreateServlet extends HttpServlet
             DI.bookCategoryService.create(cat);
 
             // Done.
-            response.sendRedirect("kategori.jsp");
+            response.sendRedirect(request.getContextPath() + "/kategori.jsp");
         }
         catch (Exception ex)
         {

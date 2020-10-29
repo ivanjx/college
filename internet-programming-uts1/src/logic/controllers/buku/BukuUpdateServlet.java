@@ -55,7 +55,7 @@ public class BukuUpdateServlet extends HttpServlet
             DI.bookService.update(book);
 
             // Done.
-            response.sendRedirect("buku.jsp");
+            response.sendRedirect(request.getContextPath() + "/buku.jsp");
         }
         catch (Exception ex)
         {

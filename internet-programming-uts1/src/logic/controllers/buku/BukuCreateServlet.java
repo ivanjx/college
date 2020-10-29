@@ -53,7 +53,7 @@ public class BukuCreateServlet extends HttpServlet
             DI.bookService.create(book);
 
             // Done.
-            response.sendRedirect("buku.jsp");
+            response.sendRedirect(request.getContextPath() + "/buku.jsp");
         }
         catch (Exception ex)
         {

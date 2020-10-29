@@ -41,7 +41,7 @@ public class PembeliUpdateServlet extends HttpServlet
             DI.customerService.update(data);
 
             // Done.
-            response.sendRedirect("pembeli.jsp");
+            response.sendRedirect(request.getContextPath() + "/pembeli.jsp");
         }
         catch (Exception ex)
         {

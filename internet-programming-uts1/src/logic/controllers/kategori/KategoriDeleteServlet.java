@@ -26,7 +26,7 @@ public class KategoriDeleteServlet extends HttpServlet
             DI.bookCategoryService.delete(id);
 
             // Done.
-            response.sendRedirect("kategori.jsp");
+            response.sendRedirect(request.getContextPath() + "/kategori.jsp");
         }
         catch (Exception ex)
         {

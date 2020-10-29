@@ -39,7 +39,7 @@ public class PembeliCreateServlet extends HttpServlet
             DI.customerService.create(data);
 
             // Done.
-            response.sendRedirect("pembeli.jsp");
+            response.sendRedirect(request.getContextPath() + "/pembeli.jsp");
         }
         catch (Exception ex)
         {

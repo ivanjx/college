@@ -38,7 +38,7 @@ public class KategoriUpdateServlet extends HttpServlet
             DI.bookCategoryService.update(cat);
 
             // Done.
-            response.sendRedirect("kategori.jsp");
+            response.sendRedirect(request.getContextPath() + "/kategori.jsp");
         }
         catch (Exception ex)
         {
