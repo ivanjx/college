@@ -46,8 +46,17 @@
                                 <img src="<%= books[i].imgPath %>">
                             </td>
                             <td class="action-col-data">
-                                <button class="btn"><i class="fas fa-edit"></i></button>
-                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
+                                <a 
+                                    class="btn"
+                                    href="updatebuku.jsp?id=<%= books[i].id %>">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a 
+                                    class="btn"
+                                    onclick="return confirm('Yakin ingin menghapus buku <%= books[i].title %> ?')"
+                                    href="buku/delete?id=<%= books[i].id %>">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
                             </td>
                         </tr>
 
