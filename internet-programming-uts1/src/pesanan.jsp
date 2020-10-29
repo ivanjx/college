@@ -14,9 +14,9 @@
             <div class="content content-pesanan">
                 <h1>Pesanan</h1>
 
-                <button class="btn btn-primary add">
-                    Add
-                </button>
+                <a class="btn btn-primary add" href="createpesanan.jsp">
+                    New Order
+                </a>
 
                 <%
                 int skip = 0;
