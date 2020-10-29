@@ -88,7 +88,7 @@ public class CustomerRepository implements ICustomerRepository
     {
         DB db = new DB();
         PreparedStatement statement = db.prepareStatementReturn(
-            "update tblPembeli set nama = ?, alamat = ?, tlp = ? where id = ?");
+            "update tblPembeli set nama = ?, alamat = ?, telp = ? where id = ?");
         statement.setString(1, data.name);
         statement.setString(2, data.address);
         statement.setString(3, data.phone);
