@@ -96,7 +96,7 @@ public class OrderRepository implements IOrderRepository
         PreparedStatement statement = db.prepareStatement(
             "delete from tblPesan where idBuku = ?");
         statement.setInt(1, id);
-        statement.executeQuery();
+        statement.executeUpdate();
     }
 
     @Override
@@ -107,7 +107,7 @@ public class OrderRepository implements IOrderRepository
         PreparedStatement statement = db.prepareStatement(
             "delete from tblPesan where idPembeli = ?");
         statement.setInt(1, id);
-        statement.executeQuery();
+        statement.executeUpdate();
     }
 
     @Override
@@ -118,7 +118,7 @@ public class OrderRepository implements IOrderRepository
         PreparedStatement statement = db.prepareStatement(
             "delete from tblPesan where idBuku in (select id from tblBuku where idKategori = ?)");
         statement.setInt(1, id);
-        statement.executeQuery();
+        statement.executeUpdate();
     }
 
     

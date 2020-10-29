@@ -124,7 +124,7 @@ public class BookRepository implements IBookRepository
         PreparedStatement statement = db.prepareStatement(
             "delete from tblBuku where idKategori = ?");
         statement.setInt(1, id);
-        statement.executeQuery();
+        statement.executeUpdate();
     }
 
 }

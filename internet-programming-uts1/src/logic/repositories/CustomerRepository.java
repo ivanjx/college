@@ -108,7 +108,7 @@ public class CustomerRepository implements ICustomerRepository
         DB db = new DB();
         PreparedStatement statement = db.prepareStatement("delete from tblPembeli where id = ?");
         statement.setInt(1, id);
-        statement.executeQuery();
+        statement.executeUpdate();
     }
 
 }
