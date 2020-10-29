@@ -4,18 +4,22 @@ import logic.models.Book;
 import logic.models.BookCategory;
 import logic.repositories.IBookCategoryRepository;
 import logic.repositories.IBookRepository;
+import logic.repositories.IOrderRepository;
 
 public class BookService 
 {
     IBookRepository _bookRepo;
     IBookCategoryRepository _catRepo;
+    IOrderRepository _orderRepo;
 
     public BookService(
         IBookRepository bookRepo,
-        IBookCategoryRepository catRepo)
+        IBookCategoryRepository catRepo,
+        IOrderRepository orderRepo)
     {
         _bookRepo = bookRepo;
         _catRepo = catRepo;
+        _orderRepo = orderRepo;
     }
 
     void validate(Book data)
@@ -69,5 +73,15 @@ public class BookService
 
         // Updating.
         _bookRepo.update(data);
+    }
+
+    public void delete(int id)
+    throws Exception
+    {
+        // Deleting orders.
+        _orderRepo.deleteByBook(id);
+
+        // Deleting book.
+        _bookRepo.delete(id);
     }
 }

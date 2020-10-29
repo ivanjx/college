@@ -21,7 +21,7 @@ public class BukuDeleteServlet extends HttpServlet
             int id = Integer.parseInt(request.getParameter("id"));
             
             // Deleting.
-            DI.bookRepository.delete(id);
+            DI.bookService.delete(id);
 
             // Done.
             response.sendRedirect("buku.jsp");
