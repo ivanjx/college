@@ -1,3 +1,9 @@
+<%@page import="logic.models.*"%>
+<%@page import="logic.repositories.*"%>
+<%@page import="logic.services.*"%>
+<%@page import="logic.controllers.*"%>
+<%@page import="logic.*"%>
+
 <html>
     <%@include file='header.jsp'%>
 
@@ -12,6 +18,18 @@
                     Add
                 </button>
 
+                <%
+                int skip = 0;
+                String skipStr = request.getParameter("skip");
+
+                if (skipStr != null && !skipStr.isEmpty())
+                {
+                    skip = Integer.parseInt(skipStr);
+                }
+
+                Order[] orders = DI.orderRepository.list(skip);
+                %>
+
                 <table class="table table-striped">
                     <thead class="table table-dark">
                         <tr>
@@ -25,44 +43,38 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <%
+                        for (int i = 0; i < orders.length; ++i)
+                        {
+                            Book book = DI.bookRepository.get(orders[i].bookId);
+                            Customer cust = DI.customerRepository.get(orders[i].custId);
+                            Double totalPrice = book.price * orders[i].amount;
+                        %>
+
                         <tr>
-                            <td>Jan 20, 2020 19:30:00</td>
-                            <td>Siklus Air</td>
-                            <td>Ivan</td>
-                            <td>021-1231231</td>
-                            <td>
-                                Jalan Kenanga 1<br/>
-                                Jakarta
-                            </td>
-                            <td class="center-col">2</td>
-                            <td class="center-col">Rp. 20.000,00</td>
+                            <td><%= Helper.formatDate(orders[i].date) %></td>
+                            <td><%= book.title %></td>
+                            <td><%= cust.name %></td>
+                            <td><%= cust.phone %></td>
+                            <td><%= cust.address %></td>
+                            <td class="center-col"><%= orders[i].amount %></td>
+                            <td class="center-col"><%= Helper.formatPrice(totalPrice) %></td>
                         </tr>
-                        <tr>
-                            <td>Jan 20, 2020 19:30:00</td>
-                            <td>Siklus Air</td>
-                            <td>Ivan</td>
-                            <td>021-1231231</td>
-                            <td>
-                                Jalan Kenanga 1<br/>
-                                Jakarta
-                            </td>
-                            <td class="center-col">2</td>
-                            <td class="center-col">Rp. 20.000,00</td>
-                        </tr>
-                        <tr>
-                            <td>Jan 20, 2020 19:30:00</td>
-                            <td>Siklus Air</td>
-                            <td>Ivan</td>
-                            <td>021-1231231</td>
-                            <td>
-                                Jalan Kenanga 1<br/>
-                                Jakarta
-                            </td>
-                            <td class="center-col">2</td>
-                            <td class="center-col">Rp. 20.000,00</td>
-                        </tr>
+
+                        <%
+                        }
+                        %>
                     </tbody>
                 </table>
+
+                <%
+                if (orders.length >= 10)
+                {
+                %>
+                <a href="pesanan.jsp?skip=<%= (skip + orders.length) %>">Next</a>
+                <%
+                }
+                %>
             </div>
         </div>
     </body>
