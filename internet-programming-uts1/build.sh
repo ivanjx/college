@@ -31,7 +31,10 @@ javac \
   src/logic/controllers/kategori/KategoriDeleteServlet.java \
   src/logic/controllers/buku/BukuCreateServlet.java \
   src/logic/controllers/buku/BukuUpdateServlet.java \
-  src/logic/controllers/buku/BukuDeleteServlet.java
+  src/logic/controllers/buku/BukuDeleteServlet.java \
+  src/logic/controllers/pembeli/PembeliCreateServlet.java \
+  src/logic/controllers/pembeli/PembeliUpdateServlet.java \
+  src/logic/controllers/pembeli/PembeliDeleteServlet.java
   
 cp -R src/* bin
 rm -rf bin/logic
