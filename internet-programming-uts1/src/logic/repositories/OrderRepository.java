@@ -42,12 +42,14 @@ public class OrderRepository implements IOrderRepository
     }
 
     @Override
-    public Order[] list() 
+    public Order[] list(int skip) 
     throws SQLException, ClassNotFoundException 
     {
         DB db = new DB();
-        ResultSet rs = db.getStatement().executeQuery(
-            "select * from tblPesan order by id desc");
+        PreparedStatement statement = db.prepareStatement(
+            "select * from tblPesan order by id desc limit 10 offset ?");
+        statement.setInt(1, skip);
+        ResultSet rs = statement.executeQuery();
         List<Order> result = new ArrayList<Order>();
 
         while (rs.next())
