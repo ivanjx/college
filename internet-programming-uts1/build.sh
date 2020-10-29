@@ -38,6 +38,7 @@ javac \
   src/logic/controllers/pembeli/PembeliDeleteServlet.java \
   src/logic/controllers/pesanan/PesananCreateServlet.java \
   src/logic/controllers/pesanan/PesananDeleteServlet.java \
+  src/logic/controllers/pesanan/PesananUpdateServlet.java
   
 cp -R src/* bin
 rm -rf bin/logic
