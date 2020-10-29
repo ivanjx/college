@@ -123,5 +123,35 @@ public class OrderRepository implements IOrderRepository
         statement.executeUpdate();
     }
 
+    @Override
+    public void update(Order data) 
+    throws Exception 
+    {
+        DB db = new DB();
+        PreparedStatement statement = db.prepareStatementReturn(
+            "update tblPesan set idPembeli = ?, idBuku = ?, jumlah = ? where id = ?");
+        statement.setInt(1, data.custId);
+        statement.setInt(2, data.bookId);
+        statement.setInt(3, data.amount);
+        statement.setInt(4, data.id);
+        int count = statement.executeUpdate();
+
+        if (count == 0)
+        {
+            throw new Exception("Unable to insert data");
+        }
+    }
+
+    @Override
+    public void delete(int id) 
+    throws Exception 
+    {
+        DB db = new DB();
+        PreparedStatement statement = db.prepareStatement(
+            "delete from tblPesan where id = ?");
+        statement.setInt(1, id);
+        statement.executeUpdate();
+    }
+
     
 }
