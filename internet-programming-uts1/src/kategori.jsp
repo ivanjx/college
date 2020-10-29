@@ -37,7 +37,12 @@
                             <td><%= cats[i].name %></td>
                             <td class="action-col-data">
                                 <button class="btn"><i class="fas fa-edit"></i></button>
-                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
+                                <a 
+                                    class="btn" 
+                                    href="kategori/delete?id=<%= cats[i].id %>"
+                                    onclick="return confirm('Yakin mau menghapus kategori <%= cats[i].name %> ?')">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
                             </td>
                         </tr>
 
