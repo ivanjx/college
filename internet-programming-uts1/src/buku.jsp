@@ -41,7 +41,7 @@
                             <td><%= books[i].title %></td>
                             <td><%= DI.bookCategoryRepository.get(books[i].catId).name %></td>
                             <td><%= books[i].writer %></td>
-                            <td><%= books[i].price %></td>
+                            <td><%= Helper.formatPrice(books[i].price) %></td>
                             <td class="sampul-col-data">
                                 <img src="<%= books[i].imgPath %>">
                             </td>

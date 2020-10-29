@@ -9,6 +9,7 @@ javac \
   -classpath "./lib/servlet.jar:./lib/jdbc.jar" \
   -d bin/WEB-INF/classes \
   src/logic/DI.java \
+  src/logic/Helper.java \
   src/logic/models/BookCategory.java \
   src/logic/models/Book.java \
   src/logic/models/Customer.java \
