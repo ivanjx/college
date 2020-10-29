@@ -15,5 +15,6 @@
     <link rel="stylesheet" href="updatebuku.css">
     <link rel="stylesheet" href="pembeli.css">
     <link rel="stylesheet" href="createpembeli.css">
+    <link rel="stylesheet" href="updatepembeli.css">
     <link rel="stylesheet" href="pesanan.css">
 </head>

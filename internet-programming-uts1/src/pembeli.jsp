@@ -42,7 +42,7 @@
                             <td class="action-col-data">
                                 <a 
                                     class="btn" 
-                                    href="updatecustomer.jsp?id=<%= custs[i].id %>">
+                                    href="updatepembeli.jsp?id=<%= custs[i].id %>">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <a 
