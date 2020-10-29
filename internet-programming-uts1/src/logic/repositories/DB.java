@@ -11,10 +11,11 @@ public class DB
     static Connection _conn;
 
     void init()
-    throws SQLException
+    throws SQLException, ClassNotFoundException
     {
         if (_conn == null)
         {
+            Class.forName("com.mysql.cj.jdbc.Driver");
             _conn = DriverManager.getConnection(
                 CONN_STR, 
                 DB_USER, 
@@ -23,21 +24,21 @@ public class DB
     }
 
     public Statement getStatement()
-    throws SQLException
+    throws SQLException, ClassNotFoundException
     {
         init();        
         return _conn.createStatement();
     }
 
     public PreparedStatement prepareStatement(String q)
-    throws SQLException
+    throws SQLException, ClassNotFoundException
     {
         init();
         return _conn.prepareStatement(q);
     }
 
     public PreparedStatement prepareStatementReturn(String q)
-    throws SQLException
+    throws SQLException, ClassNotFoundException
     {
         init();
         return _conn.prepareStatement(q, Statement.RETURN_GENERATED_KEYS);

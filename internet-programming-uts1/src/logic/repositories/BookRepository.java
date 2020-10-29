@@ -40,7 +40,7 @@ public class BookRepository implements IBookRepository
 
     @Override
     public Book[] list() 
-    throws SQLException 
+    throws SQLException, ClassNotFoundException 
     {
         DB db = new DB();
         ResultSet rs = db.getStatement().executeQuery("select * from tblBuku");
@@ -63,7 +63,7 @@ public class BookRepository implements IBookRepository
 
     @Override
     public Book get(int id) 
-    throws SQLException 
+    throws SQLException, ClassNotFoundException 
     {
         DB db = new DB();
         PreparedStatement statement = db.prepareStatement("select * from tblBuku where id = ?");
@@ -108,7 +108,7 @@ public class BookRepository implements IBookRepository
 
     @Override
     public void delete(int id) 
-    throws SQLException 
+    throws SQLException, ClassNotFoundException 
     {
         DB db = new DB();
         PreparedStatement statement = db.prepareStatement("delete from tblBuku where id = ?");

@@ -34,7 +34,7 @@ public class BookCategoryRepository implements IBookCategoryRepository
 
     @Override
     public BookCategory[] list() 
-    throws SQLException
+    throws SQLException, ClassNotFoundException
     {
         DB db = new DB();
         Statement statement = db.getStatement();
@@ -54,7 +54,7 @@ public class BookCategoryRepository implements IBookCategoryRepository
 
     @Override
     public BookCategory get(int id)
-    throws SQLException 
+    throws SQLException, ClassNotFoundException 
     {
         DB db = new DB();
         PreparedStatement statement = db.prepareStatement("select * from tblKategori where id = ?");
@@ -91,7 +91,7 @@ public class BookCategoryRepository implements IBookCategoryRepository
 
     @Override
     public void delete(int id) 
-    throws SQLException 
+    throws SQLException, ClassNotFoundException 
     {
         DB db = new DB();
         PreparedStatement statement = db.prepareStatement("delete from tblKategori where id = ?");

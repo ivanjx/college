@@ -43,7 +43,7 @@ public class OrderRepository implements IOrderRepository
 
     @Override
     public Order[] list() 
-    throws SQLException 
+    throws SQLException, ClassNotFoundException 
     {
         DB db = new DB();
         ResultSet rs = db.getStatement().executeQuery(
