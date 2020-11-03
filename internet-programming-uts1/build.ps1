@@ -1,8 +1,8 @@
 Write-Output "Preparing"
-mkdir bin
-mkdir bin/WEB-INF
-mkdir bin/WEB-INF/classes
-mkdir bin/WEB-INF/lib
+New-Item -ItemType directory "bin"
+New-Item -ItemType directory "bin/WEB-INF"
+New-Item -ItemType directory "bin/WEB-INF/classes"
+New-Item -ItemType directory "bin/WEB-INF/lib"
 
 Write-Output "Compiling"
 javac `
