@@ -1,0 +1,20 @@
+.content-pembeli {
+    padding: 10px;
+}
+
+.content-pembeli .add {
+    margin: 10px 0;
+}
+
+.content-pembeli .action-col {
+    text-align: center;
+}
+
+.content-pembeli .action-col-data {
+    text-align: center;
+}
+
+.content-pembeli .action-col-data .btn {
+    padding: 5px;
+    display: inline;
+}

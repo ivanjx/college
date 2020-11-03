@@ -1,0 +1,20 @@
+.content-kategori {
+    padding: 10px;
+}
+
+.content-kategori .add {
+    margin: 10px 0;
+}
+
+.content-kategori .action-col {
+    text-align: center;
+}
+
+.content-kategori .action-col-data {
+    text-align: center;
+}
+
+.content-kategori .action-col-data .btn {
+    padding: 5px;
+    display: inline;
+}

@@ -1,0 +1,32 @@
+.content-buku {
+    padding: 10px;
+}
+
+.content-buku .add {
+    margin: 10px 0;
+}
+
+.content-buku .sampul-col {
+    text-align: center;
+}
+
+.content-buku .sampul-col-data img {
+    display: block;
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-buku .action-col {
+    text-align: center;
+}
+
+.content-buku .action-col-data {
+    text-align: center;
+}
+
+.content-buku .action-col-data .btn {
+    padding: 5px;
+    display: inline;
+}
