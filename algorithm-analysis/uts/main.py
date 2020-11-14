@@ -2,6 +2,14 @@ import os
 
 
 def input_minuman():
+    print("Daftar minuman:")
+    print("1.  Orange Juice   (Rp 7.500)")
+    print("2.  1. Coca Cola   (Rp 5.500)")
+    print("    2. Fanta       (Rp 5.500)")
+    print("    3. Sprite      (Rp 5.500)")
+    print("    4. Teh Botol   (Rp 5.000)")
+    print("3.  Aqua Gelas     (Rp 500)")
+    
     minuman = {
         'nama': '',
         'harga': 0
@@ -46,6 +54,11 @@ def input_minuman():
 
 
 def input_makanan():
+    print("Daftar makanan:")
+    print("1.  Bakso          (Rp 19.000)")
+    print("2.  Mie Ayam       (Rp 17.000)")
+    print("3.  Mpe Mpe        (Rp 14.500)")
+
     makanan = {
         'nama': '',
         'harga': 0
@@ -58,11 +71,11 @@ def input_makanan():
         pass
 
     if kode == '1':
-        makanan['nama'] = 'Bakso 1 porsi'
+        makanan['nama'] = 'Bakso'
         makanan['harga'] = 19000
     
     elif kode == '3':
-        makanan['nama'] = 'Mie Ayam 1 porsi'
+        makanan['nama'] = 'Mie Ayam'
         makanan['harga'] = 17000
 
     elif kode == '4':
