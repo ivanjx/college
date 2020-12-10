@@ -1,0 +1,15 @@
+<web-app
+    version="3.0" 
+    metadata-complete="false">
+    <servlet>
+        <servlet-name>akunServlet</servlet-name>
+        <servlet-class>control.akunServlet</servlet-name>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>akunServlet</servlet-name>
+        <url-pattern>/akunServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+</web-app>
