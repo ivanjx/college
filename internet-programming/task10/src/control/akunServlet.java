@@ -25,20 +25,13 @@ public class akunServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException
-    {
-
-    }
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException
     {
         Akun akun = new Akun();
-        String url = "jdbc:mysql://localhost:3306/sia";
-        String username = "root";
-        String password = "";
+        String url = "jdbc:mysql://localhost:3306/sia?serverTimezone=GMT";
+        String username = "sia";
+        String password = "sia";
 
         Connection koneksi = null;
         PreparedStatement pstmt = null;
@@ -47,7 +40,7 @@ public class akunServlet extends HttpServlet {
 
         try (PrintWriter out = response.getWriter())
         {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             koneksi = DriverManager.getConnection(url, username, password);
             
             String aksi = request.getParameter("aksi");
@@ -77,6 +70,10 @@ public class akunServlet extends HttpServlet {
                                 "document.location='add_akun.jsp';" +
                                 "</script>"
                             );
+                        }
+                        else
+                        {
+                            out.println("ERROR");
                         }
 
                         break;

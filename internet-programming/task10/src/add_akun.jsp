@@ -12,12 +12,12 @@
                         <td>
                             <select name="jenis">
                                 <option value="Kas/Bank" selected>Kas/Bank</option>
-                                <option value="Aktiva Lancar" selected>Aktiva Lancar</option>
-                                <option value="Aktiva Tetap" selected>Aktiva Tetap</option>
-                                <option value="Kewajiban" selected>Kewajiban</option>
-                                <option value="Modal" selected>Modal</option>
-                                <option value="Pendapatan" selected>Pendapatan</option>
-                                <option value="Beban" selected>Beban</option>
+                                <option value="Aktiva Lancar">Aktiva Lancar</option>
+                                <option value="Aktiva Tetap">Aktiva Tetap</option>
+                                <option value="Kewajiban">Kewajiban</option>
+                                <option value="Modal">Modal</option>
+                                <option value="Pendapatan">Pendapatan</option>
+                                <option value="Beban">Beban</option>
                             </select>
                         </td>
                     </tr>
