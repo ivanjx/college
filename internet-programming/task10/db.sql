@@ -3,9 +3,9 @@ create database sia;
 use sia;
 
 create table master_akun (
-    kode varchar(5) not null,
-    nama varchar(20) not null,
-    jenis varchar(20) not null,
-    saldo varchar(20) not null,
-    primary key(kode)
+    kode_akun varchar(5) not null,
+    nama_akun varchar(20) not null,
+    jenis_akun varchar(20) not null,
+    saldo_normal varchar(20) not null,
+    primary key(kode_akun)
 );
