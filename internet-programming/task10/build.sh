@@ -8,10 +8,12 @@ echo Compiling
 javac \
   -classpath "./lib/servlet.jar:./lib/jdbc.jar" \
   -d bin/WEB-INF/classes \
-  src/model/Akun.java
+  src/model/Akun.java \
+  src/control/akunServlet.java
 
 cp -R src/* bin
 rm -rf bin/model
+rm -rf bin/control
 
 echo Copying lib
 cp -R lib/* bin/WEB-INF/lib
