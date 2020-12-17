@@ -29,7 +29,7 @@ public class akunServlet extends HttpServlet {
     throws ServletException, IOException
     {
         Akun akun = new Akun();
-        String url = "jdbc:mysql://localhost:3306/sia?serverTimezone=GMT";
+        String url = "jdbc:mysql://localhost:3306/sia";
         String username = "sia";
         String password = "sia";
 
