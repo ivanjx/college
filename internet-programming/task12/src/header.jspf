@@ -1,0 +1,8 @@
+<%@ page import ="java.util.*, java.text.*"%>
+
+<%
+DateFormat df = DateFormat.getDateInstance(DateFormat.LONG);
+String sd = df.format(new Date());
+%>
+
+<h4><%=sd%></h4>
