@@ -27,9 +27,9 @@ if (action != null) {
 <body>
     <%@ include file="header.jspf"%>
 
-    <div style="display: flex; justify-content: flex-start;">
-        <div style="display: flex; flex-direction: column; justify-content: stretch;">
-            <div style="text-align: center; background: green;"><b>Kategori</b></div>
+    <div style="display: flex;">
+        <div style="display: flex; flex-direction: column; margin-right: 20px;">
+            <div style="text-align: center; background: green; color: white; padding: 10px 20px;"><b>Kategori</b></div>
             
             <%
             Iterator<Category> cc = vCategory.iterator();
@@ -37,8 +37,8 @@ if (action != null) {
             while (cc.hasNext()) {
                 Category c = cc.next();
             %>
-                <div style="display: block; background: gray;">
-                    <a href="index.jsp?action=view&id=<%=c.getId()%>" title="<%=c.getDescription()%>"><%=c.getName()%></a>
+                <div style="display: block; background: gray; padding: 5px 20px; ">
+                    <a href="index.jsp?action=view&id=<%=c.getId()%>" title="<%=c.getDescription()%>" style="color: white; text-decoration: none;"><%=c.getName()%></a>
                 </div>
             <%
             }
