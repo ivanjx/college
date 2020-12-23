@@ -130,8 +130,9 @@ public class CatalogBean {
             PreparedStatement ps = conn.prepareStatement(
                 "select * from products " +
                 "inner join categories on products.category_id = categories.category_id " +
-                "where products.sku = '?' OR products.name like '%?%' OR products.brand like '%?%' OR categories.category_name like '%?%'");
+                "where products.sku = ? OR products.name like ? OR products.brand like ? OR categories.category_name like ?");
             ps.setString(1, q);
+            q = "%" + q + "%";
             ps.setString(2, q);
             ps.setString(3, q);
             ps.setString(4, q);
