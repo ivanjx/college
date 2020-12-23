@@ -38,6 +38,10 @@ Vector<Product> vCatalog = catalogBean.getPromotionProducts();
                     <td><%=p.getCategory().getName()%></td>
                 </tr>
                 <tr>
+                    <td style="vertical-align: top;">Description:</td>
+                    <td><%=p.getDescription()%></td>
+                </tr>
+                <tr>
                     <td>Price:</td>
                     <td><%=p.getPrice()%> IDR</td>
                 </tr>
