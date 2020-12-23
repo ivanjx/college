@@ -4,7 +4,7 @@
     <h2 style="margin: 0; margin-top: 20px;">Selamat Datang di EnterKomputer.com</h2>
     <h4 style="margin: 0; margin-top: 5px">Wujudkan impian memiliki komputer idamanmu di sini!</h4>
 
-    <form method="POST" action="catalog.jsp" style="margin: 0; margin-top: 20px;">
+    <form method="GET" action="catalog.jsp" style="margin: 0; margin-top: 20px;">
         <input type="hidden" name="action" value="search">
         <input type="text" name="keyword" placeholder="Cari komponen komputer...">
         <input type="submit" value="Cari">
