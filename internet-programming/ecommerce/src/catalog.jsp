@@ -33,7 +33,7 @@ if (action == "search") {
         Product p = it.next();
     %>
         <div style="display: flex;">
-            <img src="<%=p.getImage()%>" style="max-width: 200px; max-height: 200px; margin-right: 20px;">
+            <img src="<%=p.getImage()%>" style="max-width: 200px; margin-right: 20px;">
             <div style="display: flex; flex-direction: column; justify-content: center;">
                 <b><%=p.getName()%></b>
 
