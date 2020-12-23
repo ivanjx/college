@@ -11,7 +11,9 @@ javac \
   src/com/infobean/Category.java \
   src/com/infobean/Product.java \
   src/com/infobean/Promotion.java \
-  src/com/infobean/CatalogBean.java
+  src/com/infobean/CatalogBean.java \
+  src/com/infobean/CartItem.java \
+  src/com/infobean/ShoppingCartBean.java
 
 cp -R src/* bin
 rm -rf bin/com
