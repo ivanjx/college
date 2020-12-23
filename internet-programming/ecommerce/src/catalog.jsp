@@ -40,12 +40,20 @@ if (action == "search") {
                 <br/>
                 <table>
                 <tr>
+                    <td>SKU:</td>
+                    <td><%=p.getSKU()%></td>
+                </tr>
+                <tr>
                     <td>Brand:</td>
                     <td><%=p.getBrand()%></td>
                 </tr>
                 <tr>
                     <td>Category:</td>
                     <td><%=p.getCategory().getName()%></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">Description:</td>
+                    <td><%=p.getDescription()%></td>
                 </tr>
                 <tr>
                     <td>Price:</td>
