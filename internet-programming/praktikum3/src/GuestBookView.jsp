@@ -55,5 +55,8 @@ td {
 
     <br/>
     <a href="index.jsp">REGISTER</a>
+    <br/>
+    <br/>
+    <small>(C) 2020 Ivan & Rio</small>
 </body>
 </html>

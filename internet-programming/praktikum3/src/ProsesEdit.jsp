@@ -28,5 +28,8 @@ if(r) {
         <br/>
         <a href="GuestBookView.jsp">VIEW GUEST BOOK</a>
     </h2>
+    <br/>
+    <br/>
+    <small>(C) 2020 Ivan & Rio</small>
 </body>
 </html>

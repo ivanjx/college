@@ -29,5 +29,8 @@
     </form>
 
     <h2><a href="GuestBookView.jsp">View Guest Book</a></h2>
+    <br/>
+    <br/>
+    <small>(C) 2020 Ivan & Rio</small>
 </body>
 </html>
