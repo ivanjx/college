@@ -4,16 +4,16 @@
 <%
 String action = request.getParameter("action");
 
-if (action == null || action == "") {
+if (action == null || action.equals("")) {
     action = "view";
 }
 
 Vector<Product> vCatalog = new Vector<Product>();
 
-if (action == "search") {
+if (action.equals("search")) {
     String keyword = request.getParameter("keyword");
     vCatalog = catalogBean.getProductsCatalogSearch(keyword);
-} else if (action == "view") {
+} else if (action.equals("view")) {
     String id = request.getParameter("id");
     vCatalog = catalogBean.getProductsCatalog(id);
 }
