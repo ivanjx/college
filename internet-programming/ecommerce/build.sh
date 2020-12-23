@@ -10,7 +10,8 @@ javac \
   -d bin/WEB-INF/classes \
   src/com/infobean/Category.java \
   src/com/infobean/Product.java \
-  src/com/infobean/Promotion.java
+  src/com/infobean/Promotion.java \
+  src/com/infobean/CatalogBean.java
 
 cp -R src/* bin
 rm -rf bin/com
