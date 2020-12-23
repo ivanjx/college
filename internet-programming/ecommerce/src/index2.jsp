@@ -22,14 +22,22 @@ Vector<Product> vCatalog = catalogBean.getPromotionProducts();
             <img src="<%=p.getImage()%>" style="max-width: 200px; max-height: 200px; margin-right: 20px;">
             <div style="display: flex; flex-direction: column; justify-content: center;">
                 <b><%=p.getName()%></b>
+
                 <br/>
-                <br/>
-                Brand: <%=p.getBrand()%>
-                <br/>
-                Category: <%=p.getCategory().getName()%>
-                <br/>
-                Price: <%=p.getPrice()%> IDR
-                <br/>
+                <table>
+                <tr>
+                    <td>Brand:</td>
+                    <td><%=p.getBrand()%></td>
+                </tr>
+                <tr>
+                    <td>Category:</td>
+                    <td><%=p.getCategory().getName()%></td>
+                </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td><%=p.getPrice()%> IDR</td>
+                </tr>
+                </table>
                 <br/>
 
                 <form method="POST" action="shopcart.jsp" style="margin: 0;">
@@ -39,6 +47,8 @@ Vector<Product> vCatalog = catalogBean.getPromotionProducts();
                 </form>
             </div>
         </div>
+
+        <br/>
     <%
     }
     %>
