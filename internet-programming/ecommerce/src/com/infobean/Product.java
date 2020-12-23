@@ -6,6 +6,7 @@ public class Product {
     private String name;
     private String brand;
     private String description;
+    private int price;
     private Category category;
     private String image;
 
@@ -47,6 +48,14 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public Category getCategory() {
