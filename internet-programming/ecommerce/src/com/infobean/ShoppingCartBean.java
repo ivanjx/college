@@ -52,4 +52,16 @@ public class ShoppingCartBean {
     public void removeFromCart(String productId) {
         cart.remove(getItem(productId));
     }
+
+    public int getTotal() {
+        Iterator<CartItem> it = cart.iterator();
+        int total = 0;
+
+        while (it.hasNext()) {
+            CartItem item = it.next();
+            total += item.getSubtotal();
+        }
+
+        return total;
+    }
 }
