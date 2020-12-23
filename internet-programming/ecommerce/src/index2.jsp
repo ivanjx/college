@@ -32,7 +32,7 @@ Vector<Product> vCatalog = catalogBean.getPromotionProducts();
                 <br/>
                 <br/>
 
-                <form method="POST" action="shopcart.jsp">
+                <form method="POST" action="shopcart.jsp" style="margin: 0;">
                     <input type="hidden" name="action" value="add">
                     <input type="hidden" name="id" value="<%=p.getId()%>">
                     Quantity: <input type="number" style="width: 3rem;" name="qty" value="1"> <input type="submit" value="Add to cart">
