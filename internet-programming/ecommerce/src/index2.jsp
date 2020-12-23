@@ -12,6 +12,12 @@ Vector<Product> vCatalog = catalogBean.getPromotionProducts();
 <body>
     <%@ include file="header.jspf"%>
 
+    <form method="POST" action="catalog.jsp">
+        <input type="hidden" name="action" value="search">
+        <input type="text" name="keyword" placeholder="Cari komponen komputer...">
+        <input type="submit" value="Cari">
+    </form>
+
     <%
     Iterator<Product> it = vCatalog.iterator();
 
