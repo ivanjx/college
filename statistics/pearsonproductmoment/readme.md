@@ -1,5 +1,6 @@
-Sample output:
+### Sample Output
 
+```
 Data:
 Kadar Hiperglikemi      Stress Oksidatif
 15.8                    17.2
@@ -26,3 +27,10 @@ summary: Ho rejected, Ha approved.
 relation level: very strong
 Plotting...
 Done.
+```
+
+---
+
+### Sample Plot
+
+![Sample plot](sample-plot.png)
