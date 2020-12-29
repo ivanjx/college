@@ -1,4 +1,4 @@
-package com.infobean;
+package com.jsp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

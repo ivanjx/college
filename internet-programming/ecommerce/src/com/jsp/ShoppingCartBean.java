@@ -1,4 +1,4 @@
-package com.infobean;
+package com.jsp;
 
 import java.util.Iterator;
 import java.util.Vector;

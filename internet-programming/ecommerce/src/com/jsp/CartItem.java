@@ -1,4 +1,4 @@
-package com.infobean;
+package com.jsp;
 
 public class CartItem {
     private Product product;

@@ -1,5 +1,5 @@
-<%@ page import="com.infobean.*, java.util.*"%>
-<jsp:useBean id="cart" scope="session" class="com.infobean.ShoppingCartBean"/>
+<%@ page import="com.jsp.*, java.util.*"%>
+<jsp:useBean id="cart" scope="session" class="com.jsp.ShoppingCartBean"/>
 
 <%
 String action = request.getParameter("action");

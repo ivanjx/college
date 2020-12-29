@@ -8,12 +8,11 @@ echo Compiling
 javac \
   -classpath "./lib/servlet.jar:./lib/jdbc.jar" \
   -d bin/WEB-INF/classes \
-  src/com/infobean/Category.java \
-  src/com/infobean/Product.java \
-  src/com/infobean/Promotion.java \
-  src/com/infobean/CatalogBean.java \
-  src/com/infobean/CartItem.java \
-  src/com/infobean/ShoppingCartBean.java
+  src/com/jsp/Category.java \
+  src/com/jsp/Product.java \
+  src/com/jsp/CatalogBean.java \
+  src/com/jsp/CartItem.java \
+  src/com/jsp/ShoppingCartBean.java
 
 cp -R src/* bin
 rm -rf bin/com

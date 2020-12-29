@@ -1,4 +1,4 @@
-package com.infobean;
+package com.jsp;
 
 public class Product {
     private String id;

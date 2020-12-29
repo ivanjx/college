@@ -1,5 +1,5 @@
-<%@ page import="com.infobean.*, java.util.*"%>
-<jsp:useBean id="catalogBean" scope="page" class="com.infobean.CatalogBean"/>
+<%@ page import="com.jsp.*, java.util.*"%>
+<jsp:useBean id="catalogBean" scope="page" class="com.jsp.CatalogBean"/>
 
 <%
 Vector<Product> vCatalog = catalogBean.getPromotionProducts();
