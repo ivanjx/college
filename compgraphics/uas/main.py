@@ -55,7 +55,6 @@ colors = (
 
 def cube():
     glBegin(GL_QUADS)
-    
 
     for surface in surfaces:
         x = 0
@@ -79,6 +78,7 @@ def main():
     pygame.init()
     display = (800, 600)
     pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
+    pygame.display.set_caption("UAS OPENGL IVAN & RIO")
     gluPerspective(
         45, 
         display[0] / display[1], 
