@@ -31,6 +31,10 @@ if (action != null) {
         <div style="display: flex; flex-direction: column; margin-right: 20px;">
             <div style="text-align: center; background: green; color: white; padding: 10px 20px;"><b>Kategori</b></div>
             
+            <div style="display: block; background: gray; padding: 5px 20px; ">
+                <a href="index.jsp" title="Semua kategori" style="color: white; text-decoration: none;">Semua</a>
+            </div>
+
             <%
             Iterator<Category> cc = vCategory.iterator();
 
