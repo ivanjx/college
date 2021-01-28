@@ -43,52 +43,38 @@ if (action != null) {
             %>
         </div>
 
-        <div style="margin-left: 10px">
+        <div class="d-flex flex-wrap align-items-start" style="margin-left: 10px; margin-top: -10px;">
             <%
             Iterator<Product> pp = vCatalog.iterator();
 
             while (pp.hasNext()) {
                 Product p = pp.next();
             %>
-                <div style="display: flex;">
-                    <img src="<%=p.getImage()%>" style="max-width: 200px; margin-right: 20px;">
-                    <div style="display: flex; flex-direction: column; justify-content: center;">
-                        <b><%=p.getName()%></b>
-
-                        <br/>
-                        <table>
-                        <tr>
-                            <td>SKU:</td>
-                            <td><%=p.getSKU()%></td>
-                        </tr>
-                        <tr>
-                            <td>Brand:</td>
-                            <td><%=p.getBrand()%></td>
-                        </tr>
-                        <tr>
-                            <td>Category:</td>
-                            <td><%=p.getCategory().getName()%></td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: top;">Description:</td>
-                            <td><%=p.getDescription()%></td>
-                        </tr>
-                        <tr>
-                            <td>Price:</td>
-                            <td><%=p.getPrice()%> IDR</td>
-                        </tr>
-                        </table>
-                        <br/>
-
+                <div class="card shadow" style="width: 18rem; margin: 10px;">
+                    <img class="card-img-top" src="<%=p.getImage()%>" alt="<%=p.getName()%>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=p.getName()%></h5>
+                        <p class="card-text">
+                            <i><%=p.getCategory().getName()%></i>
+                            -
+                            <i><%=p.getBrand()%></i>
+                        </p>
+                        <p class="card-text" style="margin-top: "><%=p.getDescription()%></p>
+                        <p class="card-text" style="font-weight: 550"><i><%=p.getPrice()%> IDR</i></p>
+                        
                         <form method="POST" action="shopcart.jsp" style="margin: 0;">
                             <input type="hidden" name="action" value="add">
                             <input type="hidden" name="id" value="<%=p.getId()%>">
-                            Quantity: <input type="number" style="width: 3rem;" name="qty" value="1"> <input type="submit" value="Add to cart">
+
+                            <div class="input-group">
+                                <input type="number" name="qty" value="1" class="form-control">
+                                <button class="btn btn-outline-success" type="submit">
+                                    <i class="fas fa-cart-plus"></i>
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
-
-                <br/>
             <%
             }
             %>
