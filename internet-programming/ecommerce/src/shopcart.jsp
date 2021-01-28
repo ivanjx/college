@@ -34,7 +34,7 @@ if (action != null) {
     <%
     if (cart.getTotal() == 0) {
     %>
-        <h4>Keranjang belanja Anda masih kosong</h4>
+        <h6 align="center"><i>Keranjang belanja Anda masih kosong</i></h6>
     <%
     } else {
     %>
@@ -67,7 +67,9 @@ if (action != null) {
                 <form method="POST" action="shopcart.jsp" style="margin: 0;">
                     <input type="hidden" name="action" value="delete">
                     <input type="hidden" name="id" value="<%=p.getId()%>">
-                    <input type="submit" value="Delete">
+                    <button type="submit" class="btn btn-outline-danger">
+                        <i class="fas fa-trash" style="font-size: 1.3rem"></i>
+                    </button>
                 </form>
             </td>
         </tr>
