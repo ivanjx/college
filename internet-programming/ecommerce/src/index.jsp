@@ -28,12 +28,8 @@ if (action != null) {
     <%@ include file="header.jspf"%>
 
     <div style="display: flex;">
-        <div style="display: flex; flex-direction: column; margin-right: 20px;">
-            <div style="text-align: center; background: green; color: white; padding: 10px 20px;"><b>Kategori</b></div>
-            
-            <div style="display: block; background: gray; padding: 5px 20px; ">
-                <a href="index.jsp" title="Semua kategori" style="color: white; text-decoration: none;">Semua</a>
-            </div>
+        <div style="menu bg-light">            
+            <a href="index.jsp" title="Semua kategori" class="list-group-item list-group-item-action bg-light">Semua</a>
 
             <%
             Iterator<Category> cc = vCategory.iterator();
@@ -41,15 +37,13 @@ if (action != null) {
             while (cc.hasNext()) {
                 Category c = cc.next();
             %>
-                <div style="display: block; background: gray; padding: 5px 20px; ">
-                    <a href="index.jsp?action=view&id=<%=c.getId()%>" title="<%=c.getDescription()%>" style="color: white; text-decoration: none;"><%=c.getName()%></a>
-                </div>
+                <a href="index.jsp?action=view&id=<%=c.getId()%>" title="<%=c.getDescription()%>" class="list-group-item list-group-item-action bg-light"><%=c.getName()%></a>
             <%
             }
             %>
         </div>
 
-        <div>
+        <div style="margin-left: 10px">
             <%
             Iterator<Product> pp = vCatalog.iterator();
 
