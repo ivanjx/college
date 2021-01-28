@@ -28,7 +28,8 @@ if (action != null) {
 <body>
     <%@ include file="header.jspf"%>
 
-    <h3>Keranjang Belanja</h3>
+    <h3 align="center">Keranjang Belanja</h3>
+    <br/>
 
     <%
     if (cart.getTotal() == 0) {
@@ -38,7 +39,7 @@ if (action != null) {
     } else {
     %>
 
-    <table border="1">
+    <table border="1" style="margin: 0 auto">
 
     <tr style="background: green; color: white;">
         <td><b>SKU</b></td>
@@ -88,7 +89,7 @@ if (action != null) {
 
     <br/>
     <br/>
-    <a href="index.jsp">Belanja Lagi</a>
+    <a href="index.jsp" style="display: block; text-align: center;">Belanja Lagi</a>
 
     <%@ include file="footer.jspf"%>
 </body>
