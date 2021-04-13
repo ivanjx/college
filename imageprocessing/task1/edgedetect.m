@@ -1,0 +1,15 @@
+clc;
+clear;
+a = imread('gambar.jpg');
+i = rgb2gray(a);
+e1 = edge(i);
+e2 = edge(i, 'prewitt');
+e3 = edge(i, 'Canny');
+subplot(2,2,1);
+imshow(i);
+subplot(2,2,2);
+imshow(e1);
+subplot(2,2,3);
+imshow(e2);
+subplot(2,2,4);
+imshow(e3);

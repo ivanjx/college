@@ -1,0 +1,18 @@
+clc;
+clear;
+rgb = imread('gambar.jpg');
+size(rgb);
+b1 = imresize(rgb, 0.5);
+size(b1);
+b2 = imresize(rgb, 1.2);
+size(b2);
+b3 = imresize(rgb, [100 70]);
+size(b3);
+subplot(2,2,1);
+imshow(rgb);
+subplot(2,2,2);
+imshow(b1);
+subplot(2,2,3);
+imshow(b2);
+subplot(2,2,4);
+imshow(b3);

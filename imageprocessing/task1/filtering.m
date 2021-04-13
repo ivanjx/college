@@ -1,0 +1,17 @@
+clc;
+clear;
+a = imread('gambar.jpg');
+h1 = fspecial('motion', 20, 45);
+t1 = imfilter(a, h1, 'replicate');
+h2 = fspecial('log', [4 4], 0.4);
+t2 = imfilter(a, h2, 'replicate');
+h3 = fspecial('laplacian', 0.25);
+t3 = imfilter(a, h3, 'replicate');
+subplot(2,2,1);
+imshow(a);
+subplot(2,2,2);
+imshow(t1);
+subplot(2,2,3);
+imshow(t2);
+subplot(2,2,4);
+imshow(t3);

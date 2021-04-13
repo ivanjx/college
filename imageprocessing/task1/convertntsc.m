@@ -1,0 +1,15 @@
+clc;
+clear;
+rgb = imread('gambar.jpg');
+ntsc = rgb2ntsc(rgb);
+y = ntsc(:,:,1);
+i = ntsc(:,:,2);
+q = ntsc(:,:,3);
+subplot(2,2,1);
+imshow(ntsc);
+subplot(2,2,2);
+imshow(y);
+subplot(2,2,3);
+imshow(i);
+subplot(2,2,4);
+imshow(q);

@@ -1,0 +1,15 @@
+clc;
+clear;
+rgb = imread('gambar.jpg');
+ycbcr = rgb2ycbcr(rgb);
+y = ycbcr(:,:,1);
+cb = ycbcr(:,:,2);
+cr = ycbcr(:,:,3);
+subplot(2,2,1);
+imshow(ycbcr);
+subplot(2,2,2);
+imshow(y);
+subplot(2,2,3);
+imshow(cb);
+subplot(2,2,4);
+imshow(cr);

@@ -1,0 +1,14 @@
+clc;
+clear;
+rgb = imread('gambar.jpg');
+n1 = imnoise(rgb, 'gaussian');
+n2 = imnoise(rgb, 'salt & pepper');
+n3 = imnoise(rgb, 'speckle');
+subplot(2,2,1);
+imshow(rgb);
+subplot(2,2,2);
+imshow(n1);
+subplot(2,2,3);
+imshow(n2);
+subplot(2,2,4);
+imshow(n3);
