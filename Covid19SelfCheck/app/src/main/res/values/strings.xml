@@ -3,4 +3,6 @@
     <string name="welcome">Selamat Datang</string>
     <string name="this_app_questions">Aplikasi ini berisikan beberapa daftar pertanyaan untuk mengecek kondisi fisik Anda</string>
     <string name="check_now">Cek Kondisi Anda Sekarang</string>
+    <string name="quit">Keluar</string>
+    <string name="or">atau</string>
 </resources>
