@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Covid19SelfCheck">
         <activity 
             android:name=".ConclusionActivity"
-            android:label"@string/conclusion"/>
+            android:label="@string/conclusion"/>
         <activity
             android:name=".QuestionActivity"
             android:label="@string/question" />
