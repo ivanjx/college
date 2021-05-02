@@ -17,18 +17,15 @@ public class MainActivity extends AppCompatActivity {
 
     public MainActivity() {
         ResHelper.inject(this);
-        VMLocator.mainVM.addCloseRequestedListener(() -> finishAndRemoveTask()); // As long as the interface only has one method.
-        VMLocator.mainVM.addStartedListener(() -> startQuestionActivity());
-        VMLocator.mainVM.addConclusionMadeListener(() -> startConclusionActivity());
     }
 
     private void startQuestionActivity() {
-        Intent intent = new Intent(this, QuestionActivity.class);
-        startActivity(intent);
-    }
+        // Clear listeners.
+        VMLocator.mainVM.setCloseRequestedListener(null);
+        VMLocator.mainVM.setStartedListener(null);
 
-    private void startConclusionActivity() {
-        Intent intent = new Intent(this, ConclusionActivity.class);
+        // Start new activity.
+        Intent intent = new Intent(this, QuestionActivity.class);
         startActivity(intent);
     }
 
@@ -37,5 +34,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         _binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         _binding.setVM(VMLocator.mainVM);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        // Reset vm.
+        VMLocator.mainVM.reset();
+
+        // Listeners.
+        VMLocator.mainVM.setCloseRequestedListener(() -> finishAndRemoveTask());
+        VMLocator.mainVM.setStartedListener(() -> startQuestionActivity());
     }
 }

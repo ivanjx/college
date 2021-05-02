@@ -10,9 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainViewModel extends BaseObservable {
-    private EventInitiator _closeRequestedListeners;
-    private EventInitiator _startedListener;
-    private EventInitiator _conclusionMadeListener;
+    private IEventListener _closeRequestedListener;
+    private IEventListener _startedListener;
+    private IEventListener _conclusionMadeListener;
+    private IEventListener _resetRequestedListener;
 
     private String _questionTitle;
     private String _conclusionTitle;
@@ -49,22 +50,23 @@ public class MainViewModel extends BaseObservable {
     }
 
     public MainViewModel() {
-        _closeRequestedListeners = new EventInitiator();
-        _startedListener = new EventInitiator();
-        _conclusionMadeListener = new EventInitiator();
         _answers = new ArrayList<>();
     }
 
-    public void addCloseRequestedListener(IEventListener listener) {
-        _closeRequestedListeners.addListener(listener);
+    public void setCloseRequestedListener(IEventListener listener) {
+        _closeRequestedListener = listener;
     }
 
-    public void addStartedListener(IEventListener listener) {
-        _startedListener.addListener(listener);
+    public void setStartedListener(IEventListener listener) {
+        _startedListener = listener;
     }
 
-    public void addConclusionMadeListener(IEventListener listener) {
-        _conclusionMadeListener.addListener(listener);
+    public void setConclusionMadeListener(IEventListener listener) {
+        _conclusionMadeListener = listener;
+    }
+
+    public void setResetRequestedListener(IEventListener listener) {
+        _resetRequestedListener = listener;
     }
 
     public void reset() {
@@ -72,12 +74,18 @@ public class MainViewModel extends BaseObservable {
         setQuestionTitle(null);
         _answers = new ArrayList<>();
         _questionCounter = 0;
+
+        if (_resetRequestedListener != null) {
+            _resetRequestedListener.handle();
+        }
     }
 
     public void start() {
-        setConclusionTitle(null);
         setQuestionTitle("q1");
-        _startedListener.fire();
+
+        if (_startedListener != null) {
+            _startedListener.handle();
+        }
     }
 
     private void nextQuestion() {
@@ -85,9 +93,11 @@ public class MainViewModel extends BaseObservable {
     }
 
     private void conclude(String c) {
-        setQuestionTitle(null);
-        setConclusionTitle("c");
-        _conclusionMadeListener.fire();
+        setConclusionTitle(c);
+
+        if (_conclusionMadeListener != null) {
+            _conclusionMadeListener.handle();
+        }
     }
 
     public void answer(boolean yes) {
@@ -104,6 +114,8 @@ public class MainViewModel extends BaseObservable {
     }
 
     public void closeApp() {
-        _closeRequestedListeners.fire();
+        if (_closeRequestedListener != null) {
+            _closeRequestedListener.handle();
+        }
     }
 }
