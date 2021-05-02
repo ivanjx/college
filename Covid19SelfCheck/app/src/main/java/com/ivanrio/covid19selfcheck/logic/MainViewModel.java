@@ -18,7 +18,7 @@ public class MainViewModel extends BaseObservable {
     private String _questionTitle;
     private String _conclusionTitle;
     private List<Boolean> _answers;
-    private String[] _questions = { "q1", "q2", "q3", "q4", "q5" };
+    private String[] _questions = { "q1", "q2", "q3", "q4", "q5", "q6" };
     private int _questionCounter = 0;
 
     @Bindable
@@ -81,7 +81,7 @@ public class MainViewModel extends BaseObservable {
     }
 
     public void start() {
-        setQuestionTitle("q1");
+        nextQuestion();
 
         if (_startedListener != null) {
             _startedListener.handle();
@@ -89,7 +89,7 @@ public class MainViewModel extends BaseObservable {
     }
 
     private void nextQuestion() {
-        setQuestionTitle(_questions[++_questionCounter]);
+        setQuestionTitle(_questions[_questionCounter++]);
     }
 
     private void conclude(String c) {
@@ -104,9 +104,40 @@ public class MainViewModel extends BaseObservable {
         _answers.add(yes);
 
         // Checking responses.
-        if (_answers.size() == 1 && _answers.get(0)) {
-            conclude("con_danger");
-            return;
+        if (_answers.size() == 1) {
+            if (_answers.get(0)) {
+                conclude("con_danger");
+                return;
+            }
+        }
+        else if (_answers.size() == 2) {
+            if (!_answers.get(0) && _answers.get(1)) {
+                conclude("con_danger");
+                return;
+            }
+        }
+        else if (_answers.size() == 4) {
+            if(!_answers.get(0) && !_answers.get(1) && _answers.get(3)) {
+                conclude("con_isolate");
+                return;
+            }
+        }
+        else if (_answers.size() == 5) {
+            if (!_answers.get(0) && !_answers.get(1) && !_answers.get(3) && _answers.get(4)) {
+                conclude("con_isolate");
+                return;
+            }
+        }
+        else if (_answers.size() == 6) {
+            if (!_answers.get(0) && !_answers.get(1) && !_answers.get(3) && !_answers.get(4)) {
+                if (_answers.get(5)) {
+                    conclude("con_isolate");
+                } else {
+                    conclude("con_good");
+                }
+
+                return;
+            }
         }
 
         // Nothing yet.
