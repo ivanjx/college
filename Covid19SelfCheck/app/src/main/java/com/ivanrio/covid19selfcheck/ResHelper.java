@@ -14,4 +14,12 @@ public final class ResHelper {
 
         return _activity.getString(_activity.getResources().getIdentifier(name, "string", _activity.getPackageName()));
     }
+
+    public static int getColor(String name) {
+        if (name == null) {
+            return 0;
+        }
+
+        return _activity.getColor(_activity.getResources().getIdentifier(name, "color", _activity.getPackageName()));
+    }
 }
