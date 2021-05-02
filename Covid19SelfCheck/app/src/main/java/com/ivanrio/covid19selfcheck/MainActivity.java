@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startConclusionActivity() {
-
+        Intent intent = new Intent(this, ConclusionActivity.class);
+        startActivity(intent);
     }
 
     @Override
