@@ -5,4 +5,30 @@
     <string name="check_now">Cek Kondisi Anda Sekarang</string>
     <string name="quit">Keluar</string>
     <string name="or">atau</string>
+    <string name="yes">YA</string>
+    <string name="no">TIDAK</string>
+    <string name="q1">Apakah Anda mengalami salah satu dari yang berikut:
+-Kesulitan bernafas yang parah (Bernafas dengan sangat cepat atau berbicara dalam satu kata)
+-Nyeri dada yang parah
+-Sulit untuk bangun
+-Merasa kebingungan
+-Penurunan kesadaran</string>
+    <string name="q2">Apakah Anda mengalami salah satu dari yang berikut:
+-Nafas yang pendek saat istirahat
+-Ketidakmampuan untuk berbaring karena kesulitan bernafas
+-Kondisi kesehatan kronis yang anda alami dirasakan lebih berat karena kesulitan bernapas</string>
+    <string name="q3">Apakah Anda mengalami salah satu dari yang berikut:
+-Demam
+-Batuk
+-Bersin
+-Sakit Tenggorokan
+-Sulit Bernafas</string>
+    <string name="q4">Apakah anda pernah muncul gejala sekitar 14 hari setelah travelling ke luar negeri? (China, Italy, Iran, Korea Selatan, Prancis, Spanyol, Jerman, USA) atau ke kota terjangkit (Jakarta, Bali, Solo, Yogyakarta, Pontianak, Manado, Bandung dll)?</string>
+    <string name="q5">Apakah Anda memberikan perawatan atau melakukan kontak dekat dengan seseorang dengan COVID-19 (kemungkinan atau dikonfirmasi) saat mereka sakit (batuk, demam, bersin, atau sakit tenggorokan)?</string>
+    <string name="q6">Apakah Anda memiliki kontak dekat dengan seseorang yang bepergian ke luar Negeri dalam 14 hari terakhir yang menjadi sakit (batuk, demam, bersin, atau sakit tenggorokan)?</string>
+    <string name="conclusion">Kesimpulan</string>
+    <string name="con_danger">Gejala-gejala ini membutuhkan perhatian segera. Anda harus segera menelepon Rumah Sakit Terdekat, atau langsung pergi ke instalasi gawat darurat terdekat.</string>
+    <string name="con_isolate">Sebagai tindakan pencegahan, meminta siapa saja yang mengalami gejala (demam, batuk, bersin, sakit tenggorokan, atau sulit bernapas) untuk tinggal di rumah selama 14 hari untuk mencegah penyebaran. Anda disarankan untuk tidak keluar ke tempat publik, tinggal dirumah saja dan tidak boleh ada tamu. Anda disarankan untuk menelepon call center Pemprov Jatim, di mohon anda jangan berangkat ke UGD, Rumah sakit, atau klinik, kecuali kalau gejala anda semakin buruk segera pergi ke dokter terdekat.</string>
+    <string name="con_good">Anda kemungkinan besar tidak terinfeksi oleh COVID-19, Namun anda disarankan untuk tetap tinggal dirumah. Infeksi anda mungkin disebabkan virus selain COVID-19, Oleh karena itu anda tidak perlu dites oleh COVID-19. Meskipun demikian, hindarilah keluar rumah jika memungkinkan. Penyakit anda akan sembuh sendiri dengan cukup makan dan istirahat.
+Apabila anda mengalami gejala atau mendapatkan informasi baru tentang perjalanan penyakit anda, anda bisa membuka aplikasi ini lagi.</string>
 </resources>
