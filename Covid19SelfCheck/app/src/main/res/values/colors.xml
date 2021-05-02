@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="con_danger">#FF0000</color>
+    <color name="con_isolate">#FF9800</color>
+    <color name="con_good">#00C608</color>
 </resources>

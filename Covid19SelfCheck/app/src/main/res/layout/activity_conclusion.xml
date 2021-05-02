@@ -27,7 +27,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{ResHelper.getRes(VM.conclusionTitle)}"
-                android:textSize="15sp"
+                android:textSize="20sp"
+                android:textColor='@{ResHelper.getColor(VM.conclusionTitle)}'
                 android:layout_marginBottom="50dp"/>
 
             <Button
