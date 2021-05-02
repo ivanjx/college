@@ -6,23 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainViewModel extends BaseObservable {
-    private List<IEventListener> _closeRequestedListeners;
+    private EventInitiator _closeRequestedListeners;
 
     public MainViewModel() {
-        _closeRequestedListeners = new ArrayList<>();
+        _closeRequestedListeners = new EventInitiator();
     }
 
     public void addCloseRequestedListener(IEventListener listener) {
-        _closeRequestedListeners.add(listener);
-    }
-
-    private void fireCloseRequestedEvent() {
-        for (IEventListener listener : _closeRequestedListeners) {
-            listener.handle();
-        }
+        _closeRequestedListeners.addListener(listener);
     }
 
     public void closeApp() {
-        fireCloseRequestedEvent();
+        _closeRequestedListeners.fire();
     }
 }
