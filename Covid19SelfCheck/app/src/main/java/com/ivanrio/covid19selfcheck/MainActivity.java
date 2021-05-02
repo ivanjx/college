@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding _binding;
 
     public MainActivity() {
+        ResHelper.inject(this);
         _vm = new MainViewModel();
         _vm.addCloseRequestedListener(() -> finishAndRemoveTask()); // As long as the interface only has one method.
     }
