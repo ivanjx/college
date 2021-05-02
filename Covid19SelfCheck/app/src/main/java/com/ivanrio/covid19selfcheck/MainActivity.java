@@ -15,12 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     public MainActivity() {
         _vm = new MainViewModel();
-        _vm.addCloseRequestedListener(new IEventListener() {
-            @Override
-            public void handle() {
-                finishAndRemoveTask();
-            }
-        });
+        _vm.addCloseRequestedListener(() -> finishAndRemoveTask()); // As long as the interface only has one method.
     }
 
     @Override
