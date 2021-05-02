@@ -37,7 +37,8 @@
                 android:text="@string/check_now"
                 android:textSize="18sp"
                 android:paddingHorizontal="30dp"
-                android:paddingVertical="15dp"/>
+                android:paddingVertical="15dp"
+                android:onClick="@{() -> VM.start()}"/>
 
             <TextView
                 android:layout_width="wrap_content"
