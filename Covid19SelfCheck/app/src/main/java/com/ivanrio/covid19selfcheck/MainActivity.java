@@ -20,10 +20,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startQuestionActivity() {
-        // Clear listeners.
-        VMLocator.mainVM.setCloseRequestedListener(null);
-        VMLocator.mainVM.setStartedListener(null);
-
         // Start new activity.
         Intent intent = new Intent(this, QuestionActivity.class);
         startActivity(intent);
@@ -34,11 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         _binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         _binding.setVM(VMLocator.mainVM);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
 
         // Reset vm.
         VMLocator.mainVM.reset();

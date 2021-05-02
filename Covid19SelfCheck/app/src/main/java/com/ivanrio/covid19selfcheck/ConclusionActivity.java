@@ -21,11 +21,6 @@ public class ConclusionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         _binding = DataBindingUtil.setContentView(this, R.layout.activity_conclusion);
         _binding.setVM(VMLocator.mainVM);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
 
         // Listener.
         VMLocator.mainVM.setResetRequestedListener(() -> reset());

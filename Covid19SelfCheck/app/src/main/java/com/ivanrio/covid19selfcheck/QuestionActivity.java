@@ -29,11 +29,6 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         _binding = DataBindingUtil.setContentView(this, R.layout.activity_question);
         _binding.setVM(VMLocator.mainVM);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
 
         // Listener.
         VMLocator.mainVM.setConclusionMadeListener(() -> startConclusionActivity());
