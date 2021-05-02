@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19SelfCheck">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".QuestionActivity"
+            android:label="@string/question"/>
+        <activity
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
