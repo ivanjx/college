@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="VM"
             type="com.ivanrio.covid19selfcheck.logic.MainViewModel" />
     </data>
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
@@ -18,9 +17,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingHorizontal="20dp"
-            android:paddingTop="60dp"
-            android:paddingBottom="100dp"
+            android:paddingVertical="40dp"
             android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:src="@drawable/virus"
+                android:layout_marginBottom="50dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -33,25 +37,24 @@
             <Button
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="50dp"
+                android:maxWidth="250dp"
                 android:text="@string/check_now"
                 android:textSize="18sp"
-                android:paddingHorizontal="30dp"
-                android:paddingVertical="15dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="30dp"
                 android:onClick="@{() -> VM.start()}"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/or"
-                android:layout_marginVertical="30dp"
                 android:textSize="18sp"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/quit"
-                android:paddingHorizontal="20dp"
+                android:layout_marginTop="30dp"
                 android:onClick="@{() -> VM.closeApp()}"/>
 
         </LinearLayout>
