@@ -6,6 +6,9 @@
         <variable
             name="VM"
             type="com.ivanrio.covid19selfcheck.logic.MainViewModel" />
+        <variable
+            name="Self"
+            type="com.ivanrio.covid19selfcheck.MainActivity" />
     </data>
     <ScrollView
         android:layout_width="match_parent"
@@ -17,8 +20,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingHorizontal="20dp"
-            android:paddingVertical="40dp"
+            android:paddingBottom="40dp"
+            android:paddingTop="20dp"
             android:gravity="center_horizontal">
+
+            <Spinner
+                android:id="@+id/langSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="50dp"/>
 
             <ImageView
                 android:layout_width="match_parent"
