@@ -1,9 +1,9 @@
-package com.ivanrio.covid19selfcheck.tests.logic;
+package com.ivankara.covid19selfcheck.tests.logic;
 
 import androidx.databinding.Observable;
 import androidx.databinding.library.baseAdapters.BR;
 
-import com.ivanrio.covid19selfcheck.logic.MainViewModel;
+import com.ivankara.covid19selfcheck.logic.MainViewModel;
 
 import org.junit.Test;
 

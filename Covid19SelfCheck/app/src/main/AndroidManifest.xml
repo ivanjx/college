@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ivanrio.covid19selfcheck">
+    package="com.ivankara.covid19selfcheck">
 
     <application
         android:allowBackup="true"
@@ -10,12 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19SelfCheck">
         <activity 
-            android:name=".ConclusionActivity"
+            android:name="com.ivankara.covid19selfcheck.ConclusionActivity"
             android:label="@string/conclusion"/>
         <activity
-            android:name=".QuestionActivity"
+            android:name="com.ivankara.covid19selfcheck.QuestionActivity"
             android:label="@string/question" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.ivankara.covid19selfcheck.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.ivanrio.covid19selfcheck;
+package com.ivankara.covid19selfcheck;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -6,10 +6,9 @@ import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.ivanrio.covid19selfcheck.databinding.ActivityMainBinding;
-import com.ivanrio.covid19selfcheck.databinding.ActivityQuestionBinding;
-import com.ivanrio.covid19selfcheck.logic.MainViewModel;
-import com.ivanrio.covid19selfcheck.logic.VMLocator;
+import com.ivankara.covid19selfcheck.databinding.ActivityMainBinding;
+import com.ivankara.covid19selfcheck.databinding.ActivityQuestionBinding;
+import com.ivankara.covid19selfcheck.logic.VMLocator;
 
 public class QuestionActivity extends AppCompatActivity {
     private ActivityQuestionBinding _binding;

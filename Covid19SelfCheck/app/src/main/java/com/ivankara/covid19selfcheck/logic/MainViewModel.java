@@ -1,11 +1,10 @@
-package com.ivanrio.covid19selfcheck.logic;
+package com.ivankara.covid19selfcheck.logic;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
-import com.ivanrio.covid19selfcheck.BR;
+import com.ivankara.covid19selfcheck.BR;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 

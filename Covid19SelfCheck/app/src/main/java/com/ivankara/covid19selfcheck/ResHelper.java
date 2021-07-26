@@ -1,4 +1,4 @@
-package com.ivanrio.covid19selfcheck;
+package com.ivankara.covid19selfcheck;
 
 public final class ResHelper {
     private static MainActivity _activity;

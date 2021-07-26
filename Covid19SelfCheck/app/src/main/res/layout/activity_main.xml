@@ -5,10 +5,10 @@
     <data>
         <variable
             name="VM"
-            type="com.ivanrio.covid19selfcheck.logic.MainViewModel" />
+            type="com.ivankara.covid19selfcheck.logic.MainViewModel" />
         <variable
             name="Self"
-            type="com.ivanrio.covid19selfcheck.MainActivity" />
+            type="com.ivankara.covid19selfcheck.MainActivity" />
     </data>
     <ScrollView
         android:layout_width="match_parent"

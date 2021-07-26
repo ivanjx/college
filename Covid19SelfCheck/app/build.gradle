@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.ivanrio.covid19selfcheck"
+        applicationId 'com.ivankara.covid19selfcheck'
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
