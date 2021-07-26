@@ -15,7 +15,9 @@
         <activity
             android:name="com.ivankara.covid19selfcheck.QuestionActivity"
             android:label="@string/question" />
-        <activity android:name="com.ivankara.covid19selfcheck.MainActivity">
+        <activity
+            android:name="com.ivankara.covid19selfcheck.MainActivity"
+            android:label="Covid19 Self Check by Ivan Kara">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
